@@ -1,0 +1,15 @@
+name: glustercli
+version: 0.1.0
+
+authors:
+  - Aravinda Vishwanathapura <mail@aravindavk.in>
+
+description: |
+  gluster cli bindings
+
+development_dependencies:
+  ameba:
+    github: crystal-ameba/ameba
+    version: ~> 0.13.0
+
+license: Apache-2.0

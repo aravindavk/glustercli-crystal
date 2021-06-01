@@ -37,6 +37,10 @@ module GlusterCLI
     Volume.list
   end
 
+  def self.list_volume_status
+    Volume.status
+  end
+
   def self.create_volume(name : String, bricks : Array(String), opts : VolumeCreateOptions)
     Volume.create(name, bricks, opts)
   end

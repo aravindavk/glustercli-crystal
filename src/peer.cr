@@ -1,28 +1,25 @@
 require "xml"
 
 require "./helpers"
+require "./types"
 
 module GlusterCLI
   class Peer
-    property id = "",
-      hostname = "",
-      connected = false
-
     def initialize
     end
 
     def self.list
-      rc, resp = execute_cmd("gluster",
-        ["pool", "list", "--xml"])
-      # TODO: Log error if rc != 0
-      return [] of Peer if rc != 0
+      rc, resp, err = GlusterCLI.execute_gluster_cmd(["pool", "list", "--xml"])
+      if rc != 0
+        raise CommandException.new(rc, err)
+      end
 
       document = XML.parse(resp)
 
       prs = document.xpath_nodes("//peerStatus/peer")
 
       prs.map do |pr|
-        peer = Peer.new
+        peer = NodeInfo.new
         pr.children.each do |ele|
           case ele.name
           when "uuid"

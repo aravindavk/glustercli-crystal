@@ -1,0 +1,23 @@
+= GlusterFS CLI bindings - Crystal
+
+== Super Simple
+
+[source,crystal]
+----
+require "glustercli"
+
+puts GlusterCLI.list_peers
+puts GlusterCLI.list_volumes
+----
+
+== Installation
+
+Add this to your application's shard.yml:
+
+[source,yaml]
+----
+dependencies:
+  glustercli:
+    github: aravindavk/glustercli-crystal
+----
+

@@ -1,10 +1,10 @@
 require "json"
 
 module GlusterCLI
-  HEALTH_UP       = "up"
-  HEALTH_DOWN     = "down"
-  HEALTH_PARTIAL  = "partial"
-  HEALTH_DEGRADED = "degraded"
+  HEALTH_UP       = "Up"
+  HEALTH_DOWN     = "Down"
+  HEALTH_PARTIAL  = "Partial"
+  HEALTH_DEGRADED = "Degraded"
 
   STATE_CREATED = "Created"
   STATE_STARTED = "Started"
@@ -111,6 +111,15 @@ module GlusterCLI
       options = {} of String => String
 
     def initialize
+    end
+
+    def subvol_type
+      # "Distributed Replicate" will become "Replicate"
+      @type.split(" ")[-1]
+    end
+
+    def subvol_size
+      @bricks.size / @distribute_count
     end
   end
 end

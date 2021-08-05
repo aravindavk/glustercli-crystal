@@ -2,18 +2,16 @@ require "./types"
 
 module GlusterCLI
   class Volume
-    def initialize(@name : String)
+    def initialize(@cli : CLI, @name : String)
     end
 
     def self.group_subvols(volumes)
       volumes.map do |volume|
-        # "Distributed Replicate" will become "Replicate"
-        subvol_type = volume.type.split(" ")[-1]
-        subvol_bricks_count = volume.bricks.size / volume.distribute_count
+        subvol_type = volume.subvol_type
 
         # Divide the bricks list as subvolumes
         subvol_bricks = [] of Array(Brick)
-        volume.bricks.each_slice(subvol_bricks_count.to_i) do |grp|
+        volume.bricks.each_slice(volume.subvol_size.to_i) do |grp|
           subvol_bricks << grp
         end
 
@@ -109,8 +107,10 @@ module GlusterCLI
       end
     end
 
-    def info
-      rc, resp, err = GlusterCLI.execute_gluster_cmd(["volume", "info", @name, "--xml"])
+    def info(status = false)
+      return _status if status
+
+      rc, resp, err = @cli.execute_gluster_cmd(["volume", "info", @name, "--xml"])
       if rc != 0
         raise CommandException.new(rc, err)
       end
@@ -120,8 +120,10 @@ module GlusterCLI
       Volume.group_subvols(Volume.parse_info(document))[0]
     end
 
-    def self.list
-      rc, resp, err = GlusterCLI.execute_gluster_cmd(["volume", "info", "--xml"])
+    def self.list(cli, status = false)
+      return all_status(cli) if status
+
+      rc, resp, err = cli.execute_gluster_cmd(["volume", "info", "--xml"])
       if rc != 0
         raise CommandException.new(rc, err)
       end
@@ -131,9 +133,9 @@ module GlusterCLI
       group_subvols(parse_info(document))
     end
 
-    def self.brick_status(volname = "all")
+    def self.brick_status(cli, volname = "all")
       # TODO: Volume filter
-      rc, resp, err = GlusterCLI.execute_gluster_cmd(["volume", "status", volname, "detail", "--xml"])
+      rc, resp, err = cli.execute_gluster_cmd(["volume", "status", volname, "detail", "--xml"])
       if rc != 0
         raise CommandException.new(rc, err)
       end
@@ -348,14 +350,14 @@ module GlusterCLI
       end
     end
 
-    def status
-      volumes = Volume.update_brick_status([info], Volume.brick_status(@name))
+    def _status
+      volumes = Volume.update_brick_status([info], Volume.brick_status(@cli, @name))
       volumes = Volume.update_volume_utilization(volumes)
       Volume.update_volume_health(volumes)[0]
     end
 
-    def self.status
-      volumes = Volume.update_brick_status(Volume.list, Volume.brick_status)
+    def self.all_status(cli)
+      volumes = Volume.update_brick_status(Volume.list(cli), Volume.brick_status(cli))
       volumes = Volume.update_volume_utilization(volumes)
       Volume.update_volume_health(volumes)
     end
@@ -364,14 +366,14 @@ module GlusterCLI
       cmd = ["volume", "start", @name]
       cmd << "force" if force
 
-      GlusterCLI.execute_gluster_cmd(cmd)
+      @cli.execute_gluster_cmd(cmd)
     end
 
     def stop(force = false)
       cmd = ["volume", "stop", @name]
       cmd << "force" if force
 
-      GlusterCLI.execute_gluster_cmd(cmd)
+      @cli.execute_gluster_cmd(cmd)
     end
 
     def option_set(key_values : Array(Array(String, String)))
@@ -381,7 +383,7 @@ module GlusterCLI
         cmd << value
       end
 
-      GlusterCLI.execute_gluster_cmd(cmd)
+      @cli.execute_gluster_cmd(cmd)
     end
 
     def option_set(key : String, value : String)
@@ -389,23 +391,23 @@ module GlusterCLI
       cmd << key
       cmd << value
 
-      GlusterCLI.execute_gluster_cmd(cmd)
+      @cli.execute_gluster_cmd(cmd)
     end
 
     def option_reset(keys : Array(String))
       cmd = ["volume", "reset", @name]
       cmd.concat(keys)
 
-      GlusterCLI.execute_gluster_cmd(cmd)
+      @cli.execute_gluster_cmd(cmd)
     end
 
     def option_reset(key : String)
       cmd = ["volume", "reset", @name, key]
 
-      GlusterCLI.execute_gluster_cmd(cmd)
+      @cli.execute_gluster_cmd(cmd)
     end
 
-    def self.create(name : String, bricks : Array(String), opts : VolumeCreateOptions)
+    def self.create(cli : CLI, name : String, bricks : Array(String), opts : VolumeCreateOptions)
       # TODO: Handle all other flags
       cmd = ["volume", "create", name]
       cmd.concat(["replica", "#{opts.replica_count}"]) if opts.replica_count > 1
@@ -415,13 +417,13 @@ module GlusterCLI
       cmd.concat(bricks)
       cmd << "force" if opts.force
 
-      GlusterCLI.execute_gluster_cmd(cmd)
+      cli.execute_gluster_cmd(cmd)
     end
 
-    def self.delete(name : String)
-      cmd = ["volume", "delete", name]
+    def delete
+      cmd = ["volume", "delete", @name]
 
-      GlusterCLI.execute_gluster_cmd(cmd)
+      @cli.execute_gluster_cmd(cmd)
     end
   end
 end

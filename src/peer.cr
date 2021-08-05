@@ -5,11 +5,11 @@ require "./types"
 
 module GlusterCLI
   class Peer
-    def initialize
+    def initialize(@cli)
     end
 
-    def self.list
-      rc, resp, err = GlusterCLI.execute_gluster_cmd(["pool", "list", "--xml"])
+    def self.list(cli)
+      rc, resp, err = cli.execute_gluster_cmd(["pool", "list", "--xml"])
       if rc != 0
         raise CommandException.new(rc, err)
       end
@@ -34,7 +34,7 @@ module GlusterCLI
         if peer.hostname == "localhost"
           peer.hostname = peer.hostname.gsub(
             "localhost",
-            GlusterCLI.current_hostname
+            cli.current_hostname
           )
         end
 
@@ -42,10 +42,10 @@ module GlusterCLI
       end
     end
 
-    def self.probe
+    def self.add(cli, hostname)
     end
 
-    def self.detach
+    def self.remove
     end
   end
 end

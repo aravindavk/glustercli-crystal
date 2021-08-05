@@ -6,8 +6,26 @@
 ----
 require "glustercli"
 
-puts GlusterCLI.list_peers
-puts GlusterCLI.list_volumes
+cli = GlusterCLI::CLI.new
+
+# List all Peers
+puts cli.list_peers
+
+# List all Volumes information
+puts cli.list_volumes
+
+# List all Volumes with status
+puts cli.list_volumes(status: true)
+
+# Info of a single Volume
+puts cli.volume("gvol1").info
+
+# Volume info with status info
+puts cli.volume("gvol1").info(status: true)
+
+# JSON output
+puts cli.list_peers.to_json
+puts cli.list_volumes(status: true).to_json
 ----
 
 == Installation

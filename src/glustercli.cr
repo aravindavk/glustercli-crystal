@@ -2,54 +2,36 @@ require "./peer"
 require "./volume"
 
 module GlusterCLI
-  @@gluster_executable = "gluster"
-  @@current_hostname = `hostname`.strip
+  class CLI
+    property gluster_executable, current_hostname : String
 
-  def self.gluster_executable=(gluster_path : String)
-    @@gluster_executable = gluster_path
-  end
+    def initialize
+      @gluster_executable = "gluster"
+      @current_hostname = `hostname`.strip
+    end
 
-  def self.gluster_executable
-    @@gluster_executable
-  end
+    def list_peers
+      Peer.list(self)
+    end
 
-  def self.current_hostname=(hostname : String)
-    @@current_hostname = hostname
-  end
+    def add_peer(hostname : String)
+      Peer.add(self, hostname)
+    end
 
-  def self.current_hostname
-    @@current_hostname
-  end
+    def peer(hostname : String)
+      Peer.new(self, hostname)
+    end
 
-  def self.list_peers
-    Peer.list
-  end
+    def list_volumes(status = false)
+      Volume.list(self, status)
+    end
 
-  def self.add_peer(hostname : String)
-    Peer.add(hostname)
-  end
+    def create_volume(name : String, bricks : Array(String), opts : VolumeCreateOptions)
+      Volume.create(self, name, bricks, opts)
+    end
 
-  def self.remove_peer(hostname : String)
-    Peer.remove(hostname)
-  end
-
-  def self.list_volumes
-    Volume.list
-  end
-
-  def self.list_volume_status
-    Volume.status
-  end
-
-  def self.create_volume(name : String, bricks : Array(String), opts : VolumeCreateOptions)
-    Volume.create(name, bricks, opts)
-  end
-
-  def self.delete_volume(name : String)
-    Volume.delete(name)
-  end
-
-  def self.volume(name : String)
-    Volume.new(name)
+    def volume(name : String)
+      Volume.new(self, name)
+    end
   end
 end

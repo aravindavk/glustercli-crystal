@@ -117,7 +117,11 @@ module GlusterCLI
 
       document = XML.parse(resp)
 
-      Volume.group_subvols(Volume.parse_info(document))[0]
+      vols = Volume.group_subvols(Volume.parse_info(document))
+
+      raise CommandException.new(-1, "Invalid Volume name") if vols.size == 0
+
+      vols[0]
     end
 
     def self.list(cli, status = false)
@@ -155,21 +159,21 @@ module GlusterCLI
           when "peerid"
             brick.node.id = ele.content.strip
           when "status"
-            brick.state = ele.content.strip.to_f
+            brick.state = ele.content.strip == "1" ? HEALTH_UP : HEALTH_DOWN
           when "pid"
-            brick.pid = ele.content.strip.to_f
+            brick.pid = ele.content.strip.to_i
           when "sizeTotal"
-            brick.size_total = ele.content.strip.to_f
+            brick.size_total = ele.content.strip.to_u64
           when "sizeFree"
-            brick.size_free = ele.content.strip.to_f
+            brick.size_free = ele.content.strip.to_u64
           when "inodesTotal"
-            brick.inodes_total = ele.content.strip.to_f
+            brick.inodes_total = ele.content.strip.to_u64
           when "inodesFree"
-            brick.inodes_free = ele.content.strip.to_f
+            brick.inodes_free = ele.content.strip.to_u64
           when "device"
             brick.device = ele.content.strip
           when "blockSize"
-            brick.block_size = ele.content.strip.to_f
+            brick.block_size = ele.content.strip.to_i
           when "fsName"
             brick.fs_name = ele.content.strip
           when "mntOptions"
@@ -230,7 +234,7 @@ module GlusterCLI
     def self.update_subvol_health(subvol)
       subvol.up_bricks = 0
       subvol.bricks.each do |brick|
-        subvol.up_bricks += 1 if brick.state == 1.0
+        subvol.up_bricks += 1 if brick.state == HEALTH_UP
       end
 
       subvol.health = HEALTH_UP
@@ -290,10 +294,10 @@ module GlusterCLI
     def self.update_volume_utilization(volumes)
       volumes.map do |volume|
         volume.subvols = volume.subvols.map do |subvol|
-          subvol.size_used = 0.0
-          subvol.size_total = 0.0
-          subvol.inodes_used = 0.0
-          subvol.inodes_total = 0.0
+          subvol.size_used = 0
+          subvol.size_total = 0
+          subvol.inodes_used = 0
+          subvol.inodes_total = 0
 
           # Subvolume utilization
           subvol.bricks.each do |brick|
@@ -334,6 +338,9 @@ module GlusterCLI
               subvol.disperse_count - subvol.disperse_redundancy_count
             )
           end
+
+          subvol.size_free = subvol.size_total - subvol.size_used
+          subvol.inodes_free = subvol.inodes_total - subvol.inodes_used
 
           # Aggregated volume utilization
           volume.size_total += subvol.size_total

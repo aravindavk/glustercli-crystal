@@ -44,16 +44,16 @@ module GlusterCLI
     property node = NodeInfo.new,
       path = "",
       type = "",
-      state = 0.0,
-      pid = 0.0,
-      size_total = 0.0,
-      size_free = 0.0,
-      inodes_total = 0.0,
-      inodes_free = 0.0,
-      size_used = 0.0,
-      inodes_used = 0.0,
+      state = "",
+      pid = 0,
+      size_total : UInt64 = 0,
+      size_free : UInt64 = 0,
+      inodes_total : UInt64 = 0,
+      inodes_free : UInt64 = 0,
+      size_used : UInt64 = 0,
+      inodes_used : UInt64 = 0,
       device = "",
-      block_size = 0.0,
+      block_size = 0,
       fs_name = "",
       mnt_options = ""
 
@@ -70,12 +70,12 @@ module GlusterCLI
       disperse_count = 0,
       disperse_redundancy_count = 0,
       arbiter_count = 0,
-      size_total = 0.0,
-      size_free = 0.0,
-      inodes_total = 0.0,
-      inodes_free = 0.0,
-      size_used = 0.0,
-      inodes_used = 0.0,
+      size_total : UInt64 = 0,
+      size_free : UInt64 = 0,
+      inodes_total : UInt64 = 0,
+      inodes_free : UInt64 = 0,
+      size_used : UInt64 = 0,
+      inodes_used : UInt64 = 0,
       up_bricks = 0,
       bricks = [] of Brick
 
@@ -99,16 +99,18 @@ module GlusterCLI
       type = "",
       health = "",
       transport = "",
-      size_total = 0.0,
-      size_free = 0.0,
-      inodes_total = 0.0,
-      inodes_free = 0.0,
-      size_used = 0.0,
-      inodes_used = 0.0,
+      size_total : UInt64 = 0,
+      size_free : UInt64 = 0,
+      inodes_total : UInt64 = 0,
+      inodes_free : UInt64 = 0,
+      size_used : UInt64 = 0,
+      inodes_used : UInt64 = 0,
       up_subvols = 0,
       subvols = [] of Subvolume,
-      bricks = [] of Brick,
       options = {} of String => String
+
+    @[JSON::Field(ignore: true)]
+    property bricks = [] of Brick
 
     def initialize
     end

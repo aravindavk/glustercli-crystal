@@ -5,9 +5,11 @@ require "./types"
 
 module GlusterCLI
   class Peer
+    # :nodoc:
     def initialize(@cli)
     end
 
+    # :nodoc:
     def self.list(cli)
       rc, resp, err = cli.execute_gluster_cmd(["pool", "list", "--xml"])
       if rc != 0
@@ -42,10 +44,17 @@ module GlusterCLI
       end
     end
 
+    # :nodoc:
     def self.add(cli, hostname)
     end
 
-    def self.remove
+    # Remove a Peer
+    #
+    # Example:
+    # ```
+    # cli.peer("server1.example.com").remove
+    # ```
+    def remove
     end
   end
 end

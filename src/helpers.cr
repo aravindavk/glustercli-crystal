@@ -1,5 +1,6 @@
 module GlusterCLI
   class CLI
+    # :nodoc:
     def execute_cmd(cmd, args)
       stdout = IO::Memory.new
       stderr = IO::Memory.new
@@ -11,6 +12,7 @@ module GlusterCLI
       end
     end
 
+    # :nodoc:
     def execute_gluster_cmd(args)
       execute_cmd(@gluster_executable, args)
     end

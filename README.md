@@ -1,9 +1,8 @@
-= GlusterFS CLI bindings - Crystal
+# GlusterFS CLI bindings - Crystal
 
-== Super Simple
+## Super Simple
 
-[source,crystal]
-----
+```crystal
 require "glustercli"
 
 cli = GlusterCLI::CLI.new
@@ -26,16 +25,14 @@ puts cli.volume("gvol1").info(status: true)
 # JSON output
 puts cli.list_peers.to_json
 puts cli.list_volumes(status: true).to_json
-----
+```
 
-== Installation
+## Installation
 
 Add this to your application's shard.yml:
 
-[source,yaml]
-----
+```yaml
 dependencies:
   glustercli:
     github: aravindavk/glustercli-crystal
-----
-
+```

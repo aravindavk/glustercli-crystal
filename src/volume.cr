@@ -2,9 +2,11 @@ require "./types"
 
 module GlusterCLI
   class Volume
+    # :nodoc:
     def initialize(@cli : CLI, @name : String)
     end
 
+    # :nodoc:
     def self.group_subvols(volumes)
       volumes.map do |volume|
         subvol_type = volume.subvol_type
@@ -33,6 +35,7 @@ module GlusterCLI
       end
     end
 
+    # :nodoc:
     def self.parse_info(document)
       vols = document.xpath_nodes("//volume")
 
@@ -107,7 +110,14 @@ module GlusterCLI
       end
     end
 
-    def info(status = false)
+    # Get Volume info and realtime Status
+    #
+    # Example:
+    # ```
+    # cli.volume("gvol1").info
+    # cli.volume("gvol1").info(status: true)
+    # ```
+    def info(status = false) : VolumeInfo
       return _status if status
 
       rc, resp, err = @cli.execute_gluster_cmd(["volume", "info", @name, "--xml"])
@@ -124,6 +134,7 @@ module GlusterCLI
       vols[0]
     end
 
+    # :nodoc:
     def self.list(cli, status = false)
       return all_status(cli) if status
 
@@ -137,6 +148,7 @@ module GlusterCLI
       group_subvols(parse_info(document))
     end
 
+    # :nodoc:
     def self.brick_status(cli, volname = "all")
       # TODO: Volume filter
       rc, resp, err = cli.execute_gluster_cmd(["volume", "status", volname, "detail", "--xml"])
@@ -188,6 +200,7 @@ module GlusterCLI
       end
     end
 
+    # :nodoc:
     def self.update_brick_status(volumes, bricks_status)
       # Update each brick's status from Volume status output
 
@@ -231,6 +244,7 @@ module GlusterCLI
       end
     end
 
+    # :nodoc:
     def self.update_subvol_health(subvol)
       subvol.up_bricks = 0
       subvol.bricks.each do |brick|
@@ -253,8 +267,9 @@ module GlusterCLI
       subvol
     end
 
-    # Update Volume health based on subvolume health
+    # :nodoc:
     def self.update_volume_health(volumes)
+      # Update Volume health based on subvolume health
       volumes.map do |volume|
         if volume.state == STATE_STARTED
           volume.health = HEALTH_UP
@@ -291,6 +306,7 @@ module GlusterCLI
       end
     end
 
+    # :nodoc:
     def self.update_volume_utilization(volumes)
       volumes.map do |volume|
         volume.subvols = volume.subvols.map do |subvol|
@@ -357,18 +373,29 @@ module GlusterCLI
       end
     end
 
+    # :nodoc:
     def _status
       volumes = Volume.update_brick_status([info], Volume.brick_status(@cli, @name))
       volumes = Volume.update_volume_utilization(volumes)
       Volume.update_volume_health(volumes)[0]
     end
 
+    # :nodoc:
     def self.all_status(cli)
       volumes = Volume.update_brick_status(Volume.list(cli), Volume.brick_status(cli))
       volumes = Volume.update_volume_utilization(volumes)
       Volume.update_volume_health(volumes)
     end
 
+    # Start a Gluster Volume
+    #
+    # Example:
+    # ```
+    # cli.volume("gvol1").start
+    #
+    # # To start with *force* option
+    # cli.volume("gvol1").start(force: true)
+    # ```
     def start(force = false)
       cmd = ["volume", "start", @name]
       cmd << "force" if force
@@ -376,6 +403,15 @@ module GlusterCLI
       @cli.execute_gluster_cmd(cmd)
     end
 
+    # Stop a Gluster Volume
+    #
+    # Example:
+    # ```
+    # cli.volume("gvol1").stop
+    #
+    # # To stop with *force* option
+    # cli.volume("gvol1").stop(force: true)
+    # ```
     def stop(force = false)
       cmd = ["volume", "stop", @name]
       cmd << "force" if force
@@ -383,7 +419,13 @@ module GlusterCLI
       @cli.execute_gluster_cmd(cmd)
     end
 
-    def option_set(key_values : Array(Array(String, String)))
+    # Set Multiple Volume Options
+    #
+    # Example:
+    # ```
+    # cli.volume("gvol1").option_set({"changelog.changelog" => "on"})
+    # ```
+    def option_set(key_values : Hash(String, String))
       cmd = ["volume", "set", @name]
       key_values.each do |key, value|
         cmd << key
@@ -393,6 +435,12 @@ module GlusterCLI
       @cli.execute_gluster_cmd(cmd)
     end
 
+    # Set a Volume Option
+    #
+    # Example:
+    # ```
+    # cli.volume("gvol1").option_set("changelog.changelog", "on")
+    # ```
     def option_set(key : String, value : String)
       cmd = ["volume", "set", @name]
       cmd << key
@@ -401,6 +449,12 @@ module GlusterCLI
       @cli.execute_gluster_cmd(cmd)
     end
 
+    # Reset Multiple Volume Options
+    #
+    # Example:
+    # ```
+    # cli.volume("gvol1").option_reset(["changelog.changelog"])
+    # ```
     def option_reset(keys : Array(String))
       cmd = ["volume", "reset", @name]
       cmd.concat(keys)
@@ -408,12 +462,19 @@ module GlusterCLI
       @cli.execute_gluster_cmd(cmd)
     end
 
+    # Reset a Volume Option
+    #
+    # Example:
+    # ```
+    # cli.volume("gvol1").option_reset("changelog.changelog")
+    # ```
     def option_reset(key : String)
       cmd = ["volume", "reset", @name, key]
 
       @cli.execute_gluster_cmd(cmd)
     end
 
+    # :nodoc:
     def self.create(cli : CLI, name : String, bricks : Array(String), opts : VolumeCreateOptions)
       # TODO: Handle all other flags
       cmd = ["volume", "create", name]
@@ -427,6 +488,12 @@ module GlusterCLI
       cli.execute_gluster_cmd(cmd)
     end
 
+    # Delete a Gluster Volume
+    #
+    # Example:
+    # ```
+    # cli.volume("gvol1").delete
+    # ```
     def delete
       cmd = ["volume", "delete", @name]
 

@@ -1,0 +1,28 @@
+name: After merging PR
+
+on:
+  push:
+    branches:
+      - master
+      - main
+      - build_test
+
+  # Allow to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  devel-tag-push:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Build dependencies
+      run: |
+          curl -fsSL https://crystal-lang.org/install.sh | sudo bash
+    - name: Generate
+      run: |
+          crystal docs
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs

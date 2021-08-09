@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="glustercli">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="glustercli">
+  <title>GlusterCLI::VolumeInfo - glustercli main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          glustercli
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="glustercli/GlusterCLI" data-name="glustercli">
+      <a href="../GlusterCLI.html">GlusterCLI</a>
+      
+        <ul>
+  
+  <li class=" " data-id="glustercli/GlusterCLI/Brick" data-name="glustercli::brick">
+      <a href="../GlusterCLI/Brick.html">Brick</a>
+      
+    </li>
+  
+  <li class=" " data-id="glustercli/GlusterCLI/CLI" data-name="glustercli::cli">
+      <a href="../GlusterCLI/CLI.html">CLI</a>
+      
+    </li>
+  
+  <li class=" " data-id="glustercli/GlusterCLI/CommandException" data-name="glustercli::commandexception">
+      <a href="../GlusterCLI/CommandException.html">CommandException</a>
+      
+    </li>
+  
+  <li class=" " data-id="glustercli/GlusterCLI/NodeInfo" data-name="glustercli::nodeinfo">
+      <a href="../GlusterCLI/NodeInfo.html">NodeInfo</a>
+      
+    </li>
+  
+  <li class=" " data-id="glustercli/GlusterCLI/Peer" data-name="glustercli::peer">
+      <a href="../GlusterCLI/Peer.html">Peer</a>
+      
+    </li>
+  
+  <li class=" " data-id="glustercli/GlusterCLI/Subvolume" data-name="glustercli::subvolume">
+      <a href="../GlusterCLI/Subvolume.html">Subvolume</a>
+      
+    </li>
+  
+  <li class=" " data-id="glustercli/GlusterCLI/Volume" data-name="glustercli::volume">
+      <a href="../GlusterCLI/Volume.html">Volume</a>
+      
+    </li>
+  
+  <li class=" " data-id="glustercli/GlusterCLI/VolumeCreateOptions" data-name="glustercli::volumecreateoptions">
+      <a href="../GlusterCLI/VolumeCreateOptions.html">VolumeCreateOptions</a>
+      
+    </li>
+  
+  <li class=" current" data-id="glustercli/GlusterCLI/VolumeInfo" data-name="glustercli::volumeinfo">
+      <a href="../GlusterCLI/VolumeInfo.html">VolumeInfo</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">struct</span> GlusterCLI::VolumeInfo
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../GlusterCLI/VolumeInfo.html">GlusterCLI::VolumeInfo</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type">JSON::Serializable</li>
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L86" target="_blank">
+        types.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new-class-method" class="signature"><strong>.new</strong></a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#arbiter_count:Int32-instance-method" class="signature"><strong>#arbiter_count</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#arbiter_count=(arbiter_count)-instance-method" class="signature"><strong>#arbiter_count=</strong>(arbiter_count)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#brick_count:Int32-instance-method" class="signature"><strong>#brick_count</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#brick_count=(brick_count)-instance-method" class="signature"><strong>#brick_count=</strong>(brick_count)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bricks:Array(GlusterCLI::Brick)-instance-method" class="signature"><strong>#bricks</strong> : Array(GlusterCLI::Brick)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bricks=(bricks)-instance-method" class="signature"><strong>#bricks=</strong>(bricks)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#disperse_count:Int32-instance-method" class="signature"><strong>#disperse_count</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#disperse_count=(disperse_count)-instance-method" class="signature"><strong>#disperse_count=</strong>(disperse_count)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#disperse_redundancy_count:Int32-instance-method" class="signature"><strong>#disperse_redundancy_count</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#disperse_redundancy_count=(disperse_redundancy_count)-instance-method" class="signature"><strong>#disperse_redundancy_count=</strong>(disperse_redundancy_count)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#distribute_count:Int32-instance-method" class="signature"><strong>#distribute_count</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#distribute_count=(distribute_count)-instance-method" class="signature"><strong>#distribute_count=</strong>(distribute_count)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#health:String-instance-method" class="signature"><strong>#health</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#health=(health)-instance-method" class="signature"><strong>#health=</strong>(health)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#id:String-instance-method" class="signature"><strong>#id</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#id=(id)-instance-method" class="signature"><strong>#id=</strong>(id)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inodes_free:UInt64-instance-method" class="signature"><strong>#inodes_free</strong> : UInt64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inodes_free=(inodes_free:UInt64)-instance-method" class="signature"><strong>#inodes_free=</strong>(inodes_free : UInt64)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inodes_total:UInt64-instance-method" class="signature"><strong>#inodes_total</strong> : UInt64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inodes_total=(inodes_total:UInt64)-instance-method" class="signature"><strong>#inodes_total=</strong>(inodes_total : UInt64)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inodes_used:UInt64-instance-method" class="signature"><strong>#inodes_used</strong> : UInt64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inodes_used=(inodes_used:UInt64)-instance-method" class="signature"><strong>#inodes_used=</strong>(inodes_used : UInt64)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#name:String-instance-method" class="signature"><strong>#name</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#name=(name)-instance-method" class="signature"><strong>#name=</strong>(name)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#options:Hash(String,String)-instance-method" class="signature"><strong>#options</strong> : Hash(String, String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#options=(options)-instance-method" class="signature"><strong>#options=</strong>(options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#replica_count:Int32-instance-method" class="signature"><strong>#replica_count</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#replica_count=(replica_count)-instance-method" class="signature"><strong>#replica_count=</strong>(replica_count)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#size_free:UInt64-instance-method" class="signature"><strong>#size_free</strong> : UInt64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#size_free=(size_free:UInt64)-instance-method" class="signature"><strong>#size_free=</strong>(size_free : UInt64)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#size_total:UInt64-instance-method" class="signature"><strong>#size_total</strong> : UInt64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#size_total=(size_total:UInt64)-instance-method" class="signature"><strong>#size_total=</strong>(size_total : UInt64)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#size_used:UInt64-instance-method" class="signature"><strong>#size_used</strong> : UInt64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#size_used=(size_used:UInt64)-instance-method" class="signature"><strong>#size_used=</strong>(size_used : UInt64)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#snapshot_count:Int32-instance-method" class="signature"><strong>#snapshot_count</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#snapshot_count=(snapshot_count)-instance-method" class="signature"><strong>#snapshot_count=</strong>(snapshot_count)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#state:String-instance-method" class="signature"><strong>#state</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#state=(state)-instance-method" class="signature"><strong>#state=</strong>(state)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subvol_size-instance-method" class="signature"><strong>#subvol_size</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subvol_type-instance-method" class="signature"><strong>#subvol_type</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subvols:Array(GlusterCLI::Subvolume)-instance-method" class="signature"><strong>#subvols</strong> : Array(GlusterCLI::Subvolume)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subvols=(subvols)-instance-method" class="signature"><strong>#subvols=</strong>(subvols)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#transport:String-instance-method" class="signature"><strong>#transport</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#transport=(transport)-instance-method" class="signature"><strong>#transport=</strong>(transport)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#type:String-instance-method" class="signature"><strong>#type</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#type=(type)-instance-method" class="signature"><strong>#type=</strong>(type)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#up_subvols:Int32-instance-method" class="signature"><strong>#up_subvols</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#up_subvols=(up_subvols)-instance-method" class="signature"><strong>#up_subvols=</strong>(up_subvols)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L87" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>
+
+        <a class="method-permalink" href="#new-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L115" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="arbiter_count:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>arbiter_count</strong> : Int32
+
+        <a class="method-permalink" href="#arbiter_count:Int32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="arbiter_count=(arbiter_count)-instance-method">
+      <div class="signature">
+        
+        def <strong>arbiter_count=</strong>(arbiter_count)
+
+        <a class="method-permalink" href="#arbiter_count=(arbiter_count)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="brick_count:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>brick_count</strong> : Int32
+
+        <a class="method-permalink" href="#brick_count:Int32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="brick_count=(brick_count)-instance-method">
+      <div class="signature">
+        
+        def <strong>brick_count=</strong>(brick_count)
+
+        <a class="method-permalink" href="#brick_count=(brick_count)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bricks:Array(GlusterCLI::Brick)-instance-method">
+      <div class="signature">
+        
+        def <strong>bricks</strong> : Array(<a href="../GlusterCLI/Brick.html">GlusterCLI::Brick</a>)
+
+        <a class="method-permalink" href="#bricks:Array(GlusterCLI::Brick)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L113" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bricks=(bricks)-instance-method">
+      <div class="signature">
+        
+        def <strong>bricks=</strong>(bricks)
+
+        <a class="method-permalink" href="#bricks=(bricks)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L113" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="disperse_count:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>disperse_count</strong> : Int32
+
+        <a class="method-permalink" href="#disperse_count:Int32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="disperse_count=(disperse_count)-instance-method">
+      <div class="signature">
+        
+        def <strong>disperse_count=</strong>(disperse_count)
+
+        <a class="method-permalink" href="#disperse_count=(disperse_count)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="disperse_redundancy_count:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>disperse_redundancy_count</strong> : Int32
+
+        <a class="method-permalink" href="#disperse_redundancy_count:Int32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="disperse_redundancy_count=(disperse_redundancy_count)-instance-method">
+      <div class="signature">
+        
+        def <strong>disperse_redundancy_count=</strong>(disperse_redundancy_count)
+
+        <a class="method-permalink" href="#disperse_redundancy_count=(disperse_redundancy_count)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="distribute_count:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>distribute_count</strong> : Int32
+
+        <a class="method-permalink" href="#distribute_count:Int32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="distribute_count=(distribute_count)-instance-method">
+      <div class="signature">
+        
+        def <strong>distribute_count=</strong>(distribute_count)
+
+        <a class="method-permalink" href="#distribute_count=(distribute_count)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="health:String-instance-method">
+      <div class="signature">
+        
+        def <strong>health</strong> : String
+
+        <a class="method-permalink" href="#health:String-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="health=(health)-instance-method">
+      <div class="signature">
+        
+        def <strong>health=</strong>(health)
+
+        <a class="method-permalink" href="#health=(health)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="id:String-instance-method">
+      <div class="signature">
+        
+        def <strong>id</strong> : String
+
+        <a class="method-permalink" href="#id:String-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="id=(id)-instance-method">
+      <div class="signature">
+        
+        def <strong>id=</strong>(id)
+
+        <a class="method-permalink" href="#id=(id)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inodes_free:UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>inodes_free</strong> : UInt64
+
+        <a class="method-permalink" href="#inodes_free:UInt64-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inodes_free=(inodes_free:UInt64)-instance-method">
+      <div class="signature">
+        
+        def <strong>inodes_free=</strong>(inodes_free : UInt64)
+
+        <a class="method-permalink" href="#inodes_free=(inodes_free:UInt64)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inodes_total:UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>inodes_total</strong> : UInt64
+
+        <a class="method-permalink" href="#inodes_total:UInt64-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inodes_total=(inodes_total:UInt64)-instance-method">
+      <div class="signature">
+        
+        def <strong>inodes_total=</strong>(inodes_total : UInt64)
+
+        <a class="method-permalink" href="#inodes_total=(inodes_total:UInt64)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inodes_used:UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>inodes_used</strong> : UInt64
+
+        <a class="method-permalink" href="#inodes_used:UInt64-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inodes_used=(inodes_used:UInt64)-instance-method">
+      <div class="signature">
+        
+        def <strong>inodes_used=</strong>(inodes_used : UInt64)
+
+        <a class="method-permalink" href="#inodes_used=(inodes_used:UInt64)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="name:String-instance-method">
+      <div class="signature">
+        
+        def <strong>name</strong> : String
+
+        <a class="method-permalink" href="#name:String-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="name=(name)-instance-method">
+      <div class="signature">
+        
+        def <strong>name=</strong>(name)
+
+        <a class="method-permalink" href="#name=(name)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="options:Hash(String,String)-instance-method">
+      <div class="signature">
+        
+        def <strong>options</strong> : Hash(String, String)
+
+        <a class="method-permalink" href="#options:Hash(String,String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="options=(options)-instance-method">
+      <div class="signature">
+        
+        def <strong>options=</strong>(options)
+
+        <a class="method-permalink" href="#options=(options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="replica_count:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>replica_count</strong> : Int32
+
+        <a class="method-permalink" href="#replica_count:Int32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="replica_count=(replica_count)-instance-method">
+      <div class="signature">
+        
+        def <strong>replica_count=</strong>(replica_count)
+
+        <a class="method-permalink" href="#replica_count=(replica_count)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="size_free:UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>size_free</strong> : UInt64
+
+        <a class="method-permalink" href="#size_free:UInt64-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="size_free=(size_free:UInt64)-instance-method">
+      <div class="signature">
+        
+        def <strong>size_free=</strong>(size_free : UInt64)
+
+        <a class="method-permalink" href="#size_free=(size_free:UInt64)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="size_total:UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>size_total</strong> : UInt64
+
+        <a class="method-permalink" href="#size_total:UInt64-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="size_total=(size_total:UInt64)-instance-method">
+      <div class="signature">
+        
+        def <strong>size_total=</strong>(size_total : UInt64)
+
+        <a class="method-permalink" href="#size_total=(size_total:UInt64)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="size_used:UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>size_used</strong> : UInt64
+
+        <a class="method-permalink" href="#size_used:UInt64-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="size_used=(size_used:UInt64)-instance-method">
+      <div class="signature">
+        
+        def <strong>size_used=</strong>(size_used : UInt64)
+
+        <a class="method-permalink" href="#size_used=(size_used:UInt64)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="snapshot_count:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>snapshot_count</strong> : Int32
+
+        <a class="method-permalink" href="#snapshot_count:Int32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="snapshot_count=(snapshot_count)-instance-method">
+      <div class="signature">
+        
+        def <strong>snapshot_count=</strong>(snapshot_count)
+
+        <a class="method-permalink" href="#snapshot_count=(snapshot_count)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="state:String-instance-method">
+      <div class="signature">
+        
+        def <strong>state</strong> : String
+
+        <a class="method-permalink" href="#state:String-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="state=(state)-instance-method">
+      <div class="signature">
+        
+        def <strong>state=</strong>(state)
+
+        <a class="method-permalink" href="#state=(state)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subvol_size-instance-method">
+      <div class="signature">
+        
+        def <strong>subvol_size</strong>
+
+        <a class="method-permalink" href="#subvol_size-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L123" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subvol_type-instance-method">
+      <div class="signature">
+        
+        def <strong>subvol_type</strong>
+
+        <a class="method-permalink" href="#subvol_type-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L118" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subvols:Array(GlusterCLI::Subvolume)-instance-method">
+      <div class="signature">
+        
+        def <strong>subvols</strong> : Array(<a href="../GlusterCLI/Subvolume.html">GlusterCLI::Subvolume</a>)
+
+        <a class="method-permalink" href="#subvols:Array(GlusterCLI::Subvolume)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subvols=(subvols)-instance-method">
+      <div class="signature">
+        
+        def <strong>subvols=</strong>(subvols)
+
+        <a class="method-permalink" href="#subvols=(subvols)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="transport:String-instance-method">
+      <div class="signature">
+        
+        def <strong>transport</strong> : String
+
+        <a class="method-permalink" href="#transport:String-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="transport=(transport)-instance-method">
+      <div class="signature">
+        
+        def <strong>transport=</strong>(transport)
+
+        <a class="method-permalink" href="#transport=(transport)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="type:String-instance-method">
+      <div class="signature">
+        
+        def <strong>type</strong> : String
+
+        <a class="method-permalink" href="#type:String-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="type=(type)-instance-method">
+      <div class="signature">
+        
+        def <strong>type=</strong>(type)
+
+        <a class="method-permalink" href="#type=(type)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="up_subvols:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>up_subvols</strong> : Int32
+
+        <a class="method-permalink" href="#up_subvols:Int32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="up_subvols=(up_subvols)-instance-method">
+      <div class="signature">
+        
+        def <strong>up_subvols=</strong>(up_subvols)
+
+        <a class="method-permalink" href="#up_subvols=(up_subvols)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/types.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

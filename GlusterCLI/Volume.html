@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="glustercli">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="glustercli">
+  <title>GlusterCLI::Volume - glustercli main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          glustercli
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="glustercli/GlusterCLI" data-name="glustercli">
+      <a href="../GlusterCLI.html">GlusterCLI</a>
+      
+        <ul>
+  
+  <li class=" " data-id="glustercli/GlusterCLI/Brick" data-name="glustercli::brick">
+      <a href="../GlusterCLI/Brick.html">Brick</a>
+      
+    </li>
+  
+  <li class=" " data-id="glustercli/GlusterCLI/CLI" data-name="glustercli::cli">
+      <a href="../GlusterCLI/CLI.html">CLI</a>
+      
+    </li>
+  
+  <li class=" " data-id="glustercli/GlusterCLI/CommandException" data-name="glustercli::commandexception">
+      <a href="../GlusterCLI/CommandException.html">CommandException</a>
+      
+    </li>
+  
+  <li class=" " data-id="glustercli/GlusterCLI/NodeInfo" data-name="glustercli::nodeinfo">
+      <a href="../GlusterCLI/NodeInfo.html">NodeInfo</a>
+      
+    </li>
+  
+  <li class=" " data-id="glustercli/GlusterCLI/Peer" data-name="glustercli::peer">
+      <a href="../GlusterCLI/Peer.html">Peer</a>
+      
+    </li>
+  
+  <li class=" " data-id="glustercli/GlusterCLI/Subvolume" data-name="glustercli::subvolume">
+      <a href="../GlusterCLI/Subvolume.html">Subvolume</a>
+      
+    </li>
+  
+  <li class=" current" data-id="glustercli/GlusterCLI/Volume" data-name="glustercli::volume">
+      <a href="../GlusterCLI/Volume.html">Volume</a>
+      
+    </li>
+  
+  <li class=" " data-id="glustercli/GlusterCLI/VolumeCreateOptions" data-name="glustercli::volumecreateoptions">
+      <a href="../GlusterCLI/VolumeCreateOptions.html">VolumeCreateOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="glustercli/GlusterCLI/VolumeInfo" data-name="glustercli::volumeinfo">
+      <a href="../GlusterCLI/VolumeInfo.html">VolumeInfo</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> GlusterCLI::Volume
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../GlusterCLI/Volume.html">GlusterCLI::Volume</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/volume.cr#L4" target="_blank">
+        volume.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#delete-instance-method" class="signature"><strong>#delete</strong></a>
+        
+          <div class="summary"><p>Delete a Gluster Volume</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#info(status=false):VolumeInfo-instance-method" class="signature"><strong>#info</strong>(status = <span class="n">false</span>) : VolumeInfo</a>
+        
+          <div class="summary"><p>Get Volume info and realtime Status</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#option_reset(keys:Array(String))-instance-method" class="signature"><strong>#option_reset</strong>(keys : Array(String))</a>
+        
+          <div class="summary"><p>Reset Multiple Volume Options</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#option_reset(key:String)-instance-method" class="signature"><strong>#option_reset</strong>(key : String)</a>
+        
+          <div class="summary"><p>Reset a Volume Option</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#option_set(key:String,value:String)-instance-method" class="signature"><strong>#option_set</strong>(key : String, value : String)</a>
+        
+          <div class="summary"><p>Set a Volume Option</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#option_set(key_values:Hash(String,String))-instance-method" class="signature"><strong>#option_set</strong>(key_values : Hash(String, String))</a>
+        
+          <div class="summary"><p>Set Multiple Volume Options</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#start(force=false)-instance-method" class="signature"><strong>#start</strong>(force = <span class="n">false</span>)</a>
+        
+          <div class="summary"><p>Start a Gluster Volume</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#stop(force=false)-instance-method" class="signature"><strong>#stop</strong>(force = <span class="n">false</span>)</a>
+        
+          <div class="summary"><p>Stop a Gluster Volume</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="delete-instance-method">
+      <div class="signature">
+        
+        def <strong>delete</strong>
+
+        <a class="method-permalink" href="#delete-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Delete a Gluster Volume</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal">cli.volume(<span class="s">&quot;gvol1&quot;</span>).delete</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/volume.cr#L497" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="info(status=false):VolumeInfo-instance-method">
+      <div class="signature">
+        
+        def <strong>info</strong>(status = <span class="n">false</span>) : <a href="../GlusterCLI/VolumeInfo.html">VolumeInfo</a>
+
+        <a class="method-permalink" href="#info(status=false):VolumeInfo-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Get Volume info and realtime Status</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal">cli.volume(<span class="s">&quot;gvol1&quot;</span>).info
+cli.volume(<span class="s">&quot;gvol1&quot;</span>).info(status: <span class="n">true</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/volume.cr#L120" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="option_reset(keys:Array(String))-instance-method">
+      <div class="signature">
+        
+        def <strong>option_reset</strong>(keys : Array(String))
+
+        <a class="method-permalink" href="#option_reset(keys:Array(String))-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Reset Multiple Volume Options</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal">cli.volume(<span class="s">&quot;gvol1&quot;</span>).option_reset([<span class="s">&quot;changelog.changelog&quot;</span>])</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/volume.cr#L458" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="option_reset(key:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>option_reset</strong>(key : String)
+
+        <a class="method-permalink" href="#option_reset(key:String)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Reset a Volume Option</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal">cli.volume(<span class="s">&quot;gvol1&quot;</span>).option_reset(<span class="s">&quot;changelog.changelog&quot;</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/volume.cr#L471" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="option_set(key:String,value:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>option_set</strong>(key : String, value : String)
+
+        <a class="method-permalink" href="#option_set(key:String,value:String)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Set a Volume Option</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal">cli.volume(<span class="s">&quot;gvol1&quot;</span>).option_set(<span class="s">&quot;changelog.changelog&quot;</span>, <span class="s">&quot;on&quot;</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/volume.cr#L444" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="option_set(key_values:Hash(String,String))-instance-method">
+      <div class="signature">
+        
+        def <strong>option_set</strong>(key_values : Hash(String, String))
+
+        <a class="method-permalink" href="#option_set(key_values:Hash(String,String))-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Set Multiple Volume Options</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal">cli.volume(<span class="s">&quot;gvol1&quot;</span>).option_set({<span class="s">&quot;changelog.changelog&quot;</span> => <span class="s">&quot;on&quot;</span>})</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/volume.cr#L428" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="start(force=false)-instance-method">
+      <div class="signature">
+        
+        def <strong>start</strong>(force = <span class="n">false</span>)
+
+        <a class="method-permalink" href="#start(force=false)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Start a Gluster Volume</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal">cli.volume(<span class="s">&quot;gvol1&quot;</span>).start
+
+<span class="c"># To start with *force* option</span>
+cli.volume(<span class="s">&quot;gvol1&quot;</span>).start(force: <span class="n">true</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/volume.cr#L399" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="stop(force=false)-instance-method">
+      <div class="signature">
+        
+        def <strong>stop</strong>(force = <span class="n">false</span>)
+
+        <a class="method-permalink" href="#stop(force=false)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Stop a Gluster Volume</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal">cli.volume(<span class="s">&quot;gvol1&quot;</span>).stop
+
+<span class="c"># To stop with *force* option</span>
+cli.volume(<span class="s">&quot;gvol1&quot;</span>).stop(force: <span class="n">true</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/534bf53efdbfde0b909708eca036ebae7c717e08/src/volume.cr#L415" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

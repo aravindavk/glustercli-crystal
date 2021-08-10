@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="glustercli">
-  <title>GlusterCLI::NodeInfo - glustercli main</title>
+  <title>GlusterCLI::ProcessMetric - glustercli main</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -76,7 +76,7 @@
       
     </li>
   
-  <li class=" current" data-id="glustercli/GlusterCLI/NodeInfo" data-name="glustercli::nodeinfo">
+  <li class=" " data-id="glustercli/GlusterCLI/NodeInfo" data-name="glustercli::nodeinfo">
       <a href="../GlusterCLI/NodeInfo.html">NodeInfo</a>
       
     </li>
@@ -86,7 +86,7 @@
       
     </li>
   
-  <li class=" " data-id="glustercli/GlusterCLI/ProcessMetric" data-name="glustercli::processmetric">
+  <li class=" current" data-id="glustercli/GlusterCLI/ProcessMetric" data-name="glustercli::processmetric">
       <a href="../GlusterCLI/ProcessMetric.html">ProcessMetric</a>
       
     </li>
@@ -125,12 +125,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">struct</span> GlusterCLI::NodeInfo
+  <span class="kind">struct</span> GlusterCLI::ProcessMetric
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../GlusterCLI/NodeInfo.html">GlusterCLI::NodeInfo</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../GlusterCLI/ProcessMetric.html">GlusterCLI::ProcessMetric</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
 
 
 
@@ -172,8 +172,8 @@
   </h2>
   
     
-      <a href="https://github.com/aravindavk/glustercli-crystal/blob/93da8775a1c78228e059880c520c63c47f524e83/src/types.cr#L30" target="_blank">
-        types.cr
+      <a href="https://github.com/aravindavk/glustercli-crystal/blob/93da8775a1c78228e059880c520c63c47f524e83/src/local_metrics.cr#L6" target="_blank">
+        local_metrics.cr
       </a>
     
     <br/>
@@ -220,32 +220,32 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#connected:Bool-instance-method" class="signature"><strong>#connected</strong> : Bool</a>
+        <a href="#cpu_percentage:Float64-instance-method" class="signature"><strong>#cpu_percentage</strong> : Float64</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#connected=(connected)-instance-method" class="signature"><strong>#connected=</strong>(connected)</a>
+        <a href="#cpu_percentage=(cpu_percentage)-instance-method" class="signature"><strong>#cpu_percentage=</strong>(cpu_percentage)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#hostname:String-instance-method" class="signature"><strong>#hostname</strong> : String</a>
+        <a href="#memory_percentage:Float64-instance-method" class="signature"><strong>#memory_percentage</strong> : Float64</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#hostname=(hostname)-instance-method" class="signature"><strong>#hostname=</strong>(hostname)</a>
+        <a href="#memory_percentage=(memory_percentage)-instance-method" class="signature"><strong>#memory_percentage=</strong>(memory_percentage)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#id:String-instance-method" class="signature"><strong>#id</strong> : String</a>
+        <a href="#uptime_seconds:UInt64-instance-method" class="signature"><strong>#uptime_seconds</strong> : UInt64</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#id=(id)-instance-method" class="signature"><strong>#id=</strong>(id)</a>
+        <a href="#uptime_seconds=(uptime_seconds:UInt64)-instance-method" class="signature"><strong>#uptime_seconds=</strong>(uptime_seconds : UInt64)</a>
         
       </li>
     
@@ -320,7 +320,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/93da8775a1c78228e059880c520c63c47f524e83/src/types.cr#L31" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/93da8775a1c78228e059880c520c63c47f524e83/src/local_metrics.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -336,7 +336,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/93da8775a1c78228e059880c520c63c47f524e83/src/types.cr#L37" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/93da8775a1c78228e059880c520c63c47f524e83/src/local_metrics.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -355,98 +355,98 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="connected:Bool-instance-method">
+    <div class="entry-detail" id="cpu_percentage:Float64-instance-method">
       <div class="signature">
         
-        def <strong>connected</strong> : Bool
+        def <strong>cpu_percentage</strong> : Float64
 
-        <a class="method-permalink" href="#connected:Bool-instance-method">#</a>
+        <a class="method-permalink" href="#cpu_percentage:Float64-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/93da8775a1c78228e059880c520c63c47f524e83/src/types.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/93da8775a1c78228e059880c520c63c47f524e83/src/local_metrics.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="connected=(connected)-instance-method">
+    <div class="entry-detail" id="cpu_percentage=(cpu_percentage)-instance-method">
       <div class="signature">
         
-        def <strong>connected=</strong>(connected)
+        def <strong>cpu_percentage=</strong>(cpu_percentage)
 
-        <a class="method-permalink" href="#connected=(connected)-instance-method">#</a>
+        <a class="method-permalink" href="#cpu_percentage=(cpu_percentage)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/93da8775a1c78228e059880c520c63c47f524e83/src/types.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/93da8775a1c78228e059880c520c63c47f524e83/src/local_metrics.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="hostname:String-instance-method">
+    <div class="entry-detail" id="memory_percentage:Float64-instance-method">
       <div class="signature">
         
-        def <strong>hostname</strong> : String
+        def <strong>memory_percentage</strong> : Float64
 
-        <a class="method-permalink" href="#hostname:String-instance-method">#</a>
+        <a class="method-permalink" href="#memory_percentage:Float64-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/93da8775a1c78228e059880c520c63c47f524e83/src/types.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/93da8775a1c78228e059880c520c63c47f524e83/src/local_metrics.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="hostname=(hostname)-instance-method">
+    <div class="entry-detail" id="memory_percentage=(memory_percentage)-instance-method">
       <div class="signature">
         
-        def <strong>hostname=</strong>(hostname)
+        def <strong>memory_percentage=</strong>(memory_percentage)
 
-        <a class="method-permalink" href="#hostname=(hostname)-instance-method">#</a>
+        <a class="method-permalink" href="#memory_percentage=(memory_percentage)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/93da8775a1c78228e059880c520c63c47f524e83/src/types.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/93da8775a1c78228e059880c520c63c47f524e83/src/local_metrics.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="id:String-instance-method">
+    <div class="entry-detail" id="uptime_seconds:UInt64-instance-method">
       <div class="signature">
         
-        def <strong>id</strong> : String
+        def <strong>uptime_seconds</strong> : UInt64
 
-        <a class="method-permalink" href="#id:String-instance-method">#</a>
+        <a class="method-permalink" href="#uptime_seconds:UInt64-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/93da8775a1c78228e059880c520c63c47f524e83/src/types.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/93da8775a1c78228e059880c520c63c47f524e83/src/local_metrics.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="id=(id)-instance-method">
+    <div class="entry-detail" id="uptime_seconds=(uptime_seconds:UInt64)-instance-method">
       <div class="signature">
         
-        def <strong>id=</strong>(id)
+        def <strong>uptime_seconds=</strong>(uptime_seconds : UInt64)
 
-        <a class="method-permalink" href="#id=(id)-instance-method">#</a>
+        <a class="method-permalink" href="#uptime_seconds=(uptime_seconds:UInt64)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/93da8775a1c78228e059880c520c63c47f524e83/src/types.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/93da8775a1c78228e059880c520c63c47f524e83/src/local_metrics.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>

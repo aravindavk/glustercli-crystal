@@ -41,7 +41,7 @@ module GlusterCLI
 
     def self.cpu_and_memory(procs)
       pids = [] of Int32
-      pids_index = Hash(Int32, Process).new
+      pids_index = Hash(Int32, ProcessData).new
 
       procs.each do |proc|
         pids_index[proc.pid] = proc

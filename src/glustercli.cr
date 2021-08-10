@@ -1,5 +1,6 @@
 require "./peer"
 require "./volume"
+require "./local_metrics"
 
 # Gluster CLI bindings
 #
@@ -111,7 +112,7 @@ module GlusterCLI
     # bricks = [
     #   "server1.example.com:/bricks/gvol1/brick1/brick",
     #   "server2.example.com:/bricks/gvol1/brick2/brick",
-    #   "server3.example.com:/bricks/gvol1/brick3/brick"
+    #   "server3.example.com:/bricks/gvol1/brick3/brick",
     # ]
     # cli.create_volume("gvol1", bricks, opts)
     # ```
@@ -128,6 +129,17 @@ module GlusterCLI
     # ```
     def volume(name : String) : Volume
       Volume.new(self, name)
+    end
+
+    # Collect the Local metrics
+    #
+    # Example:
+    # ```
+    # cli = GlusterCLI::CLI.new
+    # cli.local_metrics
+    # ```
+    def local_metrics
+      LocalMetrics.collect
     end
   end
 end

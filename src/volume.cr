@@ -72,7 +72,7 @@ module GlusterCLI
           end
         end
 
-        brks = vol.xpath_nodes("//brick")
+        brks = vol.xpath_nodes(".//brick")
         brks.each do |brk|
           brick = Brick.new
           brk.children.each do |bele|
@@ -90,7 +90,7 @@ module GlusterCLI
           volume.bricks << brick
         end
 
-        opts = vol.xpath_nodes("//option")
+        opts = vol.xpath_nodes(".//option")
         opts.each do |opt|
           option = Hash(String, String).new
           optname = ""

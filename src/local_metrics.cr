@@ -35,12 +35,7 @@ module GlusterCLI
 
     # :nodoc:
     def self.node_uptime
-      # TODO: Handle Error
-      ret, output, err = GlusterCLI.execute_cmd("uptime", ["-s"])
-
-      t1 = Time.parse(output.strip, "%Y-%m-%d %H:%M:%S", Time::Location::UTC)
-      t2 = Time.utc
-      (t2 - t1).total_seconds.to_u64
+      File.read("/proc/uptime").strip.split[0].split(".")[0].to_u64
     end
 
     # :nodoc:

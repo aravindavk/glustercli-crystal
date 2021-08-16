@@ -3,6 +3,12 @@ require "json"
 require "./process_metrics"
 
 module GlusterCLI
+  PROCESS_GLUSTERD   = "glusterd"
+  PROCESS_GLUSTERFSD = "glusterfsd"
+  PROCESS_GLUSTERFS  = "glusterfs"
+  PROCESS_EXPORTER   = "gluster-metrics-exporter"
+  PROCESS_SHD        = "glustershd"
+
   struct ProcessMetric
     include JSON::Serializable
 
@@ -21,7 +27,8 @@ module GlusterCLI
       glusterd = ProcessMetric.new,
       shds = [] of ProcessMetric,
       log_dir_size_bytes : UInt64 = 0,
-      node_uptime_seconds : UInt64 = 0
+      node_uptime_seconds : UInt64 = 0,
+      exporter = ProcessMetric.new
 
     def initialize
     end
@@ -74,6 +81,16 @@ module GlusterCLI
     end
 
     # :nodoc:
+    def self.exporter_metrics(process)
+      exporter = ProcessMetric.new
+      exporter.cpu_percentage = process.pcpu
+      exporter.memory_percentage = process.pmem
+      exporter.uptime_seconds = process.uptime
+
+      exporter
+    end
+
+    # :nodoc:
     def self.shd_metrics(process)
       shd = ProcessMetric.new
       shd.cpu_percentage = process.pcpu
@@ -96,23 +113,25 @@ module GlusterCLI
         pick_next_arg = true if arg == "--process-name"
       end
 
-      proc_name == "glustershd"
+      proc_name == PROCESS_SHD
     end
 
     # :nodoc:
     def self.collect
-      procs = ProcessData.collect(["glusterd", "glusterfsd", "glusterfs"])
+      procs = ProcessData.collect([PROCESS_GLUSTERD, PROCESS_GLUSTERFSD, PROCESS_GLUSTERFS, PROCESS_EXPORTER])
       local_metrics = LocalMetrics.new
       local_metrics.node_uptime_seconds = node_uptime
       # TODO: Handle custom log directory
       local_metrics.log_dir_size_bytes = dir_size("/var/log/glusterfs")
 
       procs.each do |p|
-        if p.command == "glusterfsd"
+        if p.command == PROCESS_GLUSTERFSD
           local_metrics.bricks.merge!(brick_metrics(p))
-        elsif p.command == "glusterd"
+        elsif p.command == PROCESS_GLUSTERD
           local_metrics.glusterd = glusterd_metrics(p)
-        elsif p.command == "glusterfs"
+        elsif p.command == PROCESS_EXPORTER
+          local_metrics.exporter = exporter_metrics(p)
+        elsif p.command == PROCESS_GLUSTERFS
           if shd_process?(p)
             local_metrics.shds << shd_metrics(p)
           end

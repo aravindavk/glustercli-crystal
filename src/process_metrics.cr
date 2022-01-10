@@ -67,7 +67,7 @@ module GlusterCLI
       collect = false
       metrics = [] of String
       lines.each do |line|
-        if line.starts_with?("    PID USER")
+        if line.strip.starts_with?("PID USER")
           collect = true
           metrics = [] of String
         end

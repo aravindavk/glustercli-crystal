@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.2.2">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="glustercli">
 
@@ -158,14 +158,14 @@
   </h2>
   
     
-      <a href="https://github.com/aravindavk/glustercli-crystal/blob/4be36de4380fefc888b795cd705dab72d4b8a4b9/src/glustercli.cr#L23" target="_blank">
+      <a href="https://github.com/aravindavk/glustercli-crystal/blob/e0be473c76eb560f7687582ab2ba01f20fae8874/src/glustercli.cr#L23" target="_blank">
         glustercli.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/aravindavk/glustercli-crystal/blob/4be36de4380fefc888b795cd705dab72d4b8a4b9/src/helpers.cr#L10" target="_blank">
+      <a href="https://github.com/aravindavk/glustercli-crystal/blob/e0be473c76eb560f7687582ab2ba01f20fae8874/src/helpers.cr#L10" target="_blank">
         helpers.cr
       </a>
     
@@ -210,14 +210,14 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#add_peer(hostname:String)-instance-method" class="signature"><strong>#add_peer</strong>(hostname : String)</a>
+        <a href="#add_peer%28hostname%3AString%29-instance-method" class="signature"><strong>#add_peer</strong>(hostname : String)</a>
         
           <div class="summary"><p>Add new peer to the Cluster</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#create_volume(name:String,bricks:Array(String),opts:VolumeCreateOptions)-instance-method" class="signature"><strong>#create_volume</strong>(name : String, bricks : Array(String), opts : VolumeCreateOptions)</a>
+        <a href="#create_volume%28name%3AString%2Cbricks%3AArray%28String%29%2Copts%3AVolumeCreateOptions%29-instance-method" class="signature"><strong>#create_volume</strong>(name : String, bricks : Array(String), opts : VolumeCreateOptions)</a>
         
           <div class="summary"><p>Create a new Gluster Volume</p></div>
         
@@ -231,7 +231,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#list_volumes(status=false)-instance-method" class="signature"><strong>#list_volumes</strong>(status = <span class="n">false</span>)</a>
+        <a href="#list_volumes%28status%3Dfalse%29-instance-method" class="signature"><strong>#list_volumes</strong>(status = <span class="n">false</span>)</a>
         
           <div class="summary"><p>List all Volumes of the Cluster</p></div>
         
@@ -245,14 +245,14 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#peer(hostname:String)-instance-method" class="signature"><strong>#peer</strong>(hostname : String)</a>
+        <a href="#peer%28hostname%3AString%29-instance-method" class="signature"><strong>#peer</strong>(hostname : String)</a>
         
           <div class="summary"><p>Get the Peer Object</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#volume(name:String):Volume-instance-method" class="signature"><strong>#volume</strong>(name : String) : Volume</a>
+        <a href="#volume%28name%3AString%29%3AVolume-instance-method" class="signature"><strong>#volume</strong>(name : String) : Volume</a>
         
           <div class="summary"><p>Get the Volume Object</p></div>
         
@@ -309,29 +309,21 @@
         <div class="doc">
           
           <p>Instance of Gluster CLI.</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;glustercli&quot;</span>
 
 cli <span class="o">=</span> <span class="t">GlusterCLI</span><span class="t">::</span><span class="t">CLI</span>.<span class="k">new</span>
 puts cli.list_peers</code></pre>
-
 <p>Set <em>current_hostname</em> if it is different from the <code>hostname</code>.
-Gluster pool list command shows "localhost" for the node where
+Gluster pool list command shows &quot;localhost&quot; for the node where
 the command is run. <em>current_hostname</em> will replace the references
 of the localhost.</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal">cli <span class="o">=</span> <span class="t">GlusterCLI</span><span class="t">::</span><span class="t">CLI</span>.<span class="k">new</span>
 cli.current_hostname <span class="o">=</span> <span class="s">&quot;server1.example.com&quot;</span></code></pre>
-
 <p>Set <em>gluster_executable</em> option if Gluster is installed in non-standard
 location.</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal">cli <span class="o">=</span> <span class="t">GlusterCLI</span><span class="t">::</span><span class="t">CLI</span>.<span class="k">new</span>
 cli.gluster_executable <span class="o">=</span> <span class="s">&quot;/usr/local/sbin/gluster&quot;</span></code></pre>
         </div>
@@ -339,7 +331,7 @@ cli.gluster_executable <span class="o">=</span> <span class="s">&quot;/usr/local
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4be36de4380fefc888b795cd705dab72d4b8a4b9/src/glustercli.cr#L56" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/e0be473c76eb560f7687582ab2ba01f20fae8874/src/glustercli.cr#L56" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -363,22 +355,20 @@ cli.gluster_executable <span class="o">=</span> <span class="s">&quot;/usr/local
         
         def <strong>add_peer</strong>(hostname : String)
 
-        <a class="method-permalink" href="#add_peer(hostname:String)-instance-method">#</a>
+        <a class="method-permalink" href="#add_peer%28hostname%3AString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Add new peer to the Cluster</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal">cli.add_peer(<span class="s">&quot;server2.example.com&quot;</span>)</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4be36de4380fefc888b795cd705dab72d4b8a4b9/src/glustercli.cr#L77" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/e0be473c76eb560f7687582ab2ba01f20fae8874/src/glustercli.cr#L77" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -388,15 +378,13 @@ cli.gluster_executable <span class="o">=</span> <span class="s">&quot;/usr/local
         
         def <strong>create_volume</strong>(name : String, bricks : Array(String), opts : <a href="../GlusterCLI/VolumeCreateOptions.html">VolumeCreateOptions</a>)
 
-        <a class="method-permalink" href="#create_volume(name:String,bricks:Array(String),opts:VolumeCreateOptions)-instance-method">#</a>
+        <a class="method-permalink" href="#create_volume%28name%3AString%2Cbricks%3AArray%28String%29%2Copts%3AVolumeCreateOptions%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Create a new Gluster Volume</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal">opts <span class="o">=</span> <span class="t">VolumeCreateOptions</span>.<span class="k">new</span>
 opts.replica_count <span class="o">=</span> <span class="n">3</span>
 
@@ -411,7 +399,7 @@ cli.create_volume(<span class="s">&quot;gvol1&quot;</span>, bricks, opts)</code>
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4be36de4380fefc888b795cd705dab72d4b8a4b9/src/glustercli.cr#L119" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/e0be473c76eb560f7687582ab2ba01f20fae8874/src/glustercli.cr#L119" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -427,16 +415,14 @@ cli.create_volume(<span class="s">&quot;gvol1&quot;</span>, bricks, opts)</code>
         <div class="doc">
           
           <p>List all peers of the Cluster</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal">puts cli.list_peers</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4be36de4380fefc888b795cd705dab72d4b8a4b9/src/glustercli.cr#L67" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/e0be473c76eb560f7687582ab2ba01f20fae8874/src/glustercli.cr#L67" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -446,15 +432,13 @@ cli.create_volume(<span class="s">&quot;gvol1&quot;</span>, bricks, opts)</code>
         
         def <strong>list_volumes</strong>(status = <span class="n">false</span>)
 
-        <a class="method-permalink" href="#list_volumes(status=false)-instance-method">#</a>
+        <a class="method-permalink" href="#list_volumes%28status%3Dfalse%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>List all Volumes of the Cluster</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal">puts cli.list_volumes
 
 <span class="c"># List all Volumes with realtime status</span>
@@ -464,7 +448,7 @@ puts cli.list_volumes(status: <span class="n">true</span>)</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4be36de4380fefc888b795cd705dab72d4b8a4b9/src/glustercli.cr#L101" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/e0be473c76eb560f7687582ab2ba01f20fae8874/src/glustercli.cr#L101" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -480,9 +464,7 @@ puts cli.list_volumes(status: <span class="n">true</span>)</code></pre>
         <div class="doc">
           
           <p>Collect the Local metrics</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal">cli <span class="o">=</span> <span class="t">GlusterCLI</span><span class="t">::</span><span class="t">CLI</span>.<span class="k">new</span>
 cli.local_metrics</code></pre>
         </div>
@@ -490,7 +472,7 @@ cli.local_metrics</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4be36de4380fefc888b795cd705dab72d4b8a4b9/src/glustercli.cr#L141" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/e0be473c76eb560f7687582ab2ba01f20fae8874/src/glustercli.cr#L141" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -500,15 +482,13 @@ cli.local_metrics</code></pre>
         
         def <strong>peer</strong>(hostname : String)
 
-        <a class="method-permalink" href="#peer(hostname:String)-instance-method">#</a>
+        <a class="method-permalink" href="#peer%28hostname%3AString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Get the Peer Object</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal">peer <span class="o">=</span> cli.peer(<span class="s">&quot;server1.example.com&quot;</span>)
 peer.remove</code></pre>
         </div>
@@ -516,7 +496,7 @@ peer.remove</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4be36de4380fefc888b795cd705dab72d4b8a4b9/src/glustercli.cr#L88" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/e0be473c76eb560f7687582ab2ba01f20fae8874/src/glustercli.cr#L88" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -526,15 +506,13 @@ peer.remove</code></pre>
         
         def <strong>volume</strong>(name : String) : <a href="../GlusterCLI/Volume.html">Volume</a>
 
-        <a class="method-permalink" href="#volume(name:String):Volume-instance-method">#</a>
+        <a class="method-permalink" href="#volume%28name%3AString%29%3AVolume-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Get the Volume Object</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal">volume <span class="o">=</span> cli.volume(<span class="s">&quot;gvol1&quot;</span>)
 volume.start</code></pre>
         </div>
@@ -542,7 +520,7 @@ volume.start</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4be36de4380fefc888b795cd705dab72d4b8a4b9/src/glustercli.cr#L130" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/e0be473c76eb560f7687582ab2ba01f20fae8874/src/glustercli.cr#L130" target="_blank">View source</a>]
         
       </div>
     </div>

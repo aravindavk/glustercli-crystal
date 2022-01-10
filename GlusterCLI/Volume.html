@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.2.2">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="glustercli">
 
@@ -158,7 +158,7 @@
   </h2>
   
     
-      <a href="https://github.com/aravindavk/glustercli-crystal/blob/4be36de4380fefc888b795cd705dab72d4b8a4b9/src/volume.cr#L4" target="_blank">
+      <a href="https://github.com/aravindavk/glustercli-crystal/blob/e0be473c76eb560f7687582ab2ba01f20fae8874/src/volume.cr#L4" target="_blank">
         volume.cr
       </a>
     
@@ -191,49 +191,49 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#info(status=false):VolumeInfo-instance-method" class="signature"><strong>#info</strong>(status = <span class="n">false</span>) : VolumeInfo</a>
+        <a href="#info%28status%3Dfalse%29%3AVolumeInfo-instance-method" class="signature"><strong>#info</strong>(status = <span class="n">false</span>) : VolumeInfo</a>
         
           <div class="summary"><p>Get Volume info and realtime Status</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#option_reset(keys:Array(String))-instance-method" class="signature"><strong>#option_reset</strong>(keys : Array(String))</a>
+        <a href="#option_reset%28keys%3AArray%28String%29%29-instance-method" class="signature"><strong>#option_reset</strong>(keys : Array(String))</a>
         
           <div class="summary"><p>Reset Multiple Volume Options</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#option_reset(key:String)-instance-method" class="signature"><strong>#option_reset</strong>(key : String)</a>
+        <a href="#option_reset%28key%3AString%29-instance-method" class="signature"><strong>#option_reset</strong>(key : String)</a>
         
           <div class="summary"><p>Reset a Volume Option</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#option_set(key:String,value:String)-instance-method" class="signature"><strong>#option_set</strong>(key : String, value : String)</a>
+        <a href="#option_set%28key%3AString%2Cvalue%3AString%29-instance-method" class="signature"><strong>#option_set</strong>(key : String, value : String)</a>
         
           <div class="summary"><p>Set a Volume Option</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#option_set(key_values:Hash(String,String))-instance-method" class="signature"><strong>#option_set</strong>(key_values : Hash(String, String))</a>
+        <a href="#option_set%28key_values%3AHash%28String%2CString%29%29-instance-method" class="signature"><strong>#option_set</strong>(key_values : Hash(String, String))</a>
         
           <div class="summary"><p>Set Multiple Volume Options</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#start(force=false)-instance-method" class="signature"><strong>#start</strong>(force = <span class="n">false</span>)</a>
+        <a href="#start%28force%3Dfalse%29-instance-method" class="signature"><strong>#start</strong>(force = <span class="n">false</span>)</a>
         
           <div class="summary"><p>Start a Gluster Volume</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#stop(force=false)-instance-method" class="signature"><strong>#stop</strong>(force = <span class="n">false</span>)</a>
+        <a href="#stop%28force%3Dfalse%29-instance-method" class="signature"><strong>#stop</strong>(force = <span class="n">false</span>)</a>
         
           <div class="summary"><p>Stop a Gluster Volume</p></div>
         
@@ -294,16 +294,14 @@
         <div class="doc">
           
           <p>Delete a Gluster Volume</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal">cli.volume(<span class="s">&quot;gvol1&quot;</span>).delete</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4be36de4380fefc888b795cd705dab72d4b8a4b9/src/volume.cr#L497" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/e0be473c76eb560f7687582ab2ba01f20fae8874/src/volume.cr#L497" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -313,15 +311,13 @@
         
         def <strong>info</strong>(status = <span class="n">false</span>) : <a href="../GlusterCLI/VolumeInfo.html">VolumeInfo</a>
 
-        <a class="method-permalink" href="#info(status=false):VolumeInfo-instance-method">#</a>
+        <a class="method-permalink" href="#info%28status%3Dfalse%29%3AVolumeInfo-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Get Volume info and realtime Status</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal">cli.volume(<span class="s">&quot;gvol1&quot;</span>).info
 cli.volume(<span class="s">&quot;gvol1&quot;</span>).info(status: <span class="n">true</span>)</code></pre>
         </div>
@@ -329,7 +325,7 @@ cli.volume(<span class="s">&quot;gvol1&quot;</span>).info(status: <span class="n
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4be36de4380fefc888b795cd705dab72d4b8a4b9/src/volume.cr#L120" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/e0be473c76eb560f7687582ab2ba01f20fae8874/src/volume.cr#L120" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -339,22 +335,20 @@ cli.volume(<span class="s">&quot;gvol1&quot;</span>).info(status: <span class="n
         
         def <strong>option_reset</strong>(keys : Array(String))
 
-        <a class="method-permalink" href="#option_reset(keys:Array(String))-instance-method">#</a>
+        <a class="method-permalink" href="#option_reset%28keys%3AArray%28String%29%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Reset Multiple Volume Options</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal">cli.volume(<span class="s">&quot;gvol1&quot;</span>).option_reset([<span class="s">&quot;changelog.changelog&quot;</span>])</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4be36de4380fefc888b795cd705dab72d4b8a4b9/src/volume.cr#L458" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/e0be473c76eb560f7687582ab2ba01f20fae8874/src/volume.cr#L458" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -364,22 +358,20 @@ cli.volume(<span class="s">&quot;gvol1&quot;</span>).info(status: <span class="n
         
         def <strong>option_reset</strong>(key : String)
 
-        <a class="method-permalink" href="#option_reset(key:String)-instance-method">#</a>
+        <a class="method-permalink" href="#option_reset%28key%3AString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Reset a Volume Option</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal">cli.volume(<span class="s">&quot;gvol1&quot;</span>).option_reset(<span class="s">&quot;changelog.changelog&quot;</span>)</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4be36de4380fefc888b795cd705dab72d4b8a4b9/src/volume.cr#L471" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/e0be473c76eb560f7687582ab2ba01f20fae8874/src/volume.cr#L471" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -389,22 +381,20 @@ cli.volume(<span class="s">&quot;gvol1&quot;</span>).info(status: <span class="n
         
         def <strong>option_set</strong>(key : String, value : String)
 
-        <a class="method-permalink" href="#option_set(key:String,value:String)-instance-method">#</a>
+        <a class="method-permalink" href="#option_set%28key%3AString%2Cvalue%3AString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Set a Volume Option</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal">cli.volume(<span class="s">&quot;gvol1&quot;</span>).option_set(<span class="s">&quot;changelog.changelog&quot;</span>, <span class="s">&quot;on&quot;</span>)</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4be36de4380fefc888b795cd705dab72d4b8a4b9/src/volume.cr#L444" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/e0be473c76eb560f7687582ab2ba01f20fae8874/src/volume.cr#L444" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -414,22 +404,20 @@ cli.volume(<span class="s">&quot;gvol1&quot;</span>).info(status: <span class="n
         
         def <strong>option_set</strong>(key_values : Hash(String, String))
 
-        <a class="method-permalink" href="#option_set(key_values:Hash(String,String))-instance-method">#</a>
+        <a class="method-permalink" href="#option_set%28key_values%3AHash%28String%2CString%29%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Set Multiple Volume Options</p>
-
 <p>Example:</p>
-
-<pre><code class="language-crystal">cli.volume(<span class="s">&quot;gvol1&quot;</span>).option_set({<span class="s">&quot;changelog.changelog&quot;</span> => <span class="s">&quot;on&quot;</span>})</code></pre>
+<pre><code class="language-crystal">cli.volume(<span class="s">&quot;gvol1&quot;</span>).option_set({<span class="s">&quot;changelog.changelog&quot;</span> =&gt; <span class="s">&quot;on&quot;</span>})</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4be36de4380fefc888b795cd705dab72d4b8a4b9/src/volume.cr#L428" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/e0be473c76eb560f7687582ab2ba01f20fae8874/src/volume.cr#L428" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -439,15 +427,13 @@ cli.volume(<span class="s">&quot;gvol1&quot;</span>).info(status: <span class="n
         
         def <strong>start</strong>(force = <span class="n">false</span>)
 
-        <a class="method-permalink" href="#start(force=false)-instance-method">#</a>
+        <a class="method-permalink" href="#start%28force%3Dfalse%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Start a Gluster Volume</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal">cli.volume(<span class="s">&quot;gvol1&quot;</span>).start
 
 <span class="c"># To start with *force* option</span>
@@ -457,7 +443,7 @@ cli.volume(<span class="s">&quot;gvol1&quot;</span>).start(force: <span class="n
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4be36de4380fefc888b795cd705dab72d4b8a4b9/src/volume.cr#L399" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/e0be473c76eb560f7687582ab2ba01f20fae8874/src/volume.cr#L399" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -467,15 +453,13 @@ cli.volume(<span class="s">&quot;gvol1&quot;</span>).start(force: <span class="n
         
         def <strong>stop</strong>(force = <span class="n">false</span>)
 
-        <a class="method-permalink" href="#stop(force=false)-instance-method">#</a>
+        <a class="method-permalink" href="#stop%28force%3Dfalse%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Stop a Gluster Volume</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal">cli.volume(<span class="s">&quot;gvol1&quot;</span>).stop
 
 <span class="c"># To stop with *force* option</span>
@@ -485,7 +469,7 @@ cli.volume(<span class="s">&quot;gvol1&quot;</span>).stop(force: <span class="n"
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4be36de4380fefc888b795cd705dab72d4b8a4b9/src/volume.cr#L415" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/e0be473c76eb560f7687582ab2ba01f20fae8874/src/volume.cr#L415" target="_blank">View source</a>]
         
       </div>
     </div>

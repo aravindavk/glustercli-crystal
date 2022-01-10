@@ -123,46 +123,19 @@
 
 
 <div class="main-content">
-<h1><a id="gluster-fs-cli-bindings-crystal" class="anchor" href="#gluster-fs-cli-bindings-crystal">  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>GlusterFS CLI bindings - Crystal</h1>
-<h2><a id="super-simple" class="anchor" href="#super-simple">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>Super Simple</h2>
-<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;glustercli&quot;</span>
+<h1 class="type-name">
+  404 Not Found
+</h1>
 
-cli <span class="o">=</span> <span class="t">GlusterCLI</span><span class="t">::</span><span class="t">CLI</span>.<span class="k">new</span>
+<p>
+  This page is unavailable in this version of the API docs.
+</p>
 
-<span class="c"># List all Peers</span>
-puts cli.list_peers
+<p>
+  You can use the sidebar to search for your page, or try a different
+  Crystal version.
+</p>
 
-<span class="c"># List all Volumes information</span>
-puts cli.list_volumes
-
-<span class="c"># List all Volumes with status</span>
-puts cli.list_volumes(status: <span class="n">true</span>)
-
-<span class="c"># Info of a single Volume</span>
-puts cli.volume(<span class="s">&quot;gvol1&quot;</span>).info
-
-<span class="c"># Volume info with status info</span>
-puts cli.volume(<span class="s">&quot;gvol1&quot;</span>).info(status: <span class="n">true</span>)
-
-<span class="c"># JSON output</span>
-puts cli.list_peers.to_json
-puts cli.list_volumes(status: <span class="n">true</span>).to_json</code></pre>
-<h2><a id="installation" class="anchor" href="#installation">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>Installation</h2>
-<p>Add this to your application's shard.yml:</p>
-<pre><code class="language-yaml">dependencies:
-  glustercli:
-    github: aravindavk/glustercli-crystal</code></pre>
 </div>
 </body>
 </html>

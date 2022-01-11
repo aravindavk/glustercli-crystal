@@ -112,12 +112,12 @@ module GlusterCLI
     end
 
     # :nodoc:
-    def self.collect
+    def self.collect(log_dir = "/var/log/glusterfs")
       procs = ProcessData.collect([PROCESS_GLUSTERD, PROCESS_GLUSTERFSD, PROCESS_GLUSTERFS, PROCESS_EXPORTER])
       local_metrics = LocalMetrics.new
       local_metrics.node_uptime_seconds = node_uptime
       # TODO: Handle custom log directory
-      local_metrics.log_dir_size_bytes = dir_size("/var/log/glusterfs")
+      local_metrics.log_dir_size_bytes = dir_size(log_dir)
 
       procs.each do |p|
         if p.command == PROCESS_GLUSTERFSD

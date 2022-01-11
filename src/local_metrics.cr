@@ -41,7 +41,7 @@ module GlusterCLI
     # :nodoc:
     def self.dir_size(dir)
       # TODO: Handle Error
-      ret, output, err = GlusterCLI.execute_cmd("du", ["-s", dir])
+      _ret, output, _err = GlusterCLI.execute_cmd("du", ["-s", dir])
 
       output.strip.split[0].to_u64
     end

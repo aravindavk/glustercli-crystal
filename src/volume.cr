@@ -36,6 +36,8 @@ module GlusterCLI
     end
 
     # :nodoc:
+    # TODO: Fix and remove this warning
+    # ameba:disable Metrics/CyclomaticComplexity
     def self.parse_info(document)
       vols = document.xpath_nodes("//volume")
 
@@ -92,7 +94,6 @@ module GlusterCLI
 
         opts = vol.xpath_nodes(".//option")
         opts.each do |opt|
-          option = Hash(String, String).new
           optname = ""
           optvalue = ""
           opt.children.each do |oele|
@@ -149,6 +150,8 @@ module GlusterCLI
     end
 
     # :nodoc:
+    # TODO: Fix and remove this warning
+    # ameba:disable Metrics/CyclomaticComplexity
     def self.brick_status(cli, volname = "all")
       # TODO: Volume filter
       rc, resp, err = cli.execute_gluster_cmd(["volume", "status", volname, "detail", "--xml"])
@@ -307,6 +310,8 @@ module GlusterCLI
     end
 
     # :nodoc:
+    # TODO: Fix and remove this warning
+    # ameba:disable Metrics/CyclomaticComplexity
     def self.update_volume_utilization(volumes)
       volumes.map do |volume|
         volume.subvols = volume.subvols.map do |subvol|

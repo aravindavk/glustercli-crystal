@@ -112,7 +112,7 @@ module GlusterCLI
     end
 
     # :nodoc:
-    def self.collect(log_dir = "/var/log/glusterfs")
+    def self.collect(log_dir)
       procs = ProcessData.collect([PROCESS_GLUSTERD, PROCESS_GLUSTERFSD, PROCESS_GLUSTERFS, PROCESS_EXPORTER])
       local_metrics = LocalMetrics.new
       local_metrics.node_uptime_seconds = node_uptime

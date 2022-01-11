@@ -137,9 +137,10 @@ module GlusterCLI
     # ```
     # cli = GlusterCLI::CLI.new
     # cli.local_metrics
+    # cli.local_metrics(log_dir: "/var/log/glusterfs")
     # ```
-    def local_metrics
-      LocalMetrics.collect
+    def local_metrics(log_dir = "/var/log/glusterfs")
+      LocalMetrics.collect(log_dir)
     end
   end
 end

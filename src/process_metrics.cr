@@ -22,7 +22,8 @@ module GlusterCLI
         "-o", "pid,etimes,comm",
       ]
 
-      ret, output, err = GlusterCLI.execute_cmd("ps", cmd_args)
+      # TODO: Handle Error
+      _ret, output, _err = GlusterCLI.execute_cmd("ps", cmd_args)
       lines = output.strip.split("\n")
 
       lines.map do |line|
@@ -59,7 +60,7 @@ module GlusterCLI
         "-p", pids.join(","),
       ]
 
-      ret, output, err = GlusterCLI.execute_cmd("top", cmd_args)
+      _ret, output, _err = GlusterCLI.execute_cmd("top", cmd_args)
 
       # PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
       lines = output.strip.split("\n")

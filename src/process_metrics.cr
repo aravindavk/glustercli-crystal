@@ -83,8 +83,8 @@ module GlusterCLI
         parts = line.split
 
         proc = pids_index[parts[0].strip.to_i]
-        proc.pcpu = parts[8].strip.to_f
-        proc.pmem = parts[9].strip.to_f
+        proc.pcpu = parts[8].strip.gsub(",", "").to_f
+        proc.pmem = parts[9].strip.gsub(",", "").to_f
       end
     end
   end

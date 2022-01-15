@@ -3,7 +3,10 @@ module GlusterCLI
   def self.execute_cmd(cmd, args)
     stdout = IO::Memory.new
     stderr = IO::Memory.new
-    status = Process.run(cmd, args: args, output: stdout, error: stderr)
+    # Set numeric locale to en_US.utf8 to avoid all
+    # float conversion issues
+    status = Process.run(cmd, args: args, output: stdout, error: stderr,
+      env: {"LC_NUMERIC" => "en_US.utf8"})
     {status.exit_code, stdout.to_s, stderr.to_s}
   end
 

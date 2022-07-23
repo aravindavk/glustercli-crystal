@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.2.2">
+<meta name="generator" content="Crystal Docs 1.4.1">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="glustercli">
 
@@ -172,7 +172,7 @@
   </h2>
   
     
-      <a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L41" target="_blank">
+      <a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L41" target="_blank">
         types.cr
       </a>
     
@@ -225,7 +225,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#block_size%3D%28block_size%29-instance-method" class="signature"><strong>#block_size=</strong>(block_size)</a>
+        <a href="#block_size%3D%28block_size%3AInt32%29-instance-method" class="signature"><strong>#block_size=</strong>(block_size : Int32)</a>
         
       </li>
     
@@ -235,7 +235,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#device%3D%28device%29-instance-method" class="signature"><strong>#device=</strong>(device)</a>
+        <a href="#device%3D%28device%3AString%29-instance-method" class="signature"><strong>#device=</strong>(device : String)</a>
         
       </li>
     
@@ -245,7 +245,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#fs_name%3D%28fs_name%29-instance-method" class="signature"><strong>#fs_name=</strong>(fs_name)</a>
+        <a href="#fs_name%3D%28fs_name%3AString%29-instance-method" class="signature"><strong>#fs_name=</strong>(fs_name : String)</a>
         
       </li>
     
@@ -285,7 +285,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#mnt_options%3D%28mnt_options%29-instance-method" class="signature"><strong>#mnt_options=</strong>(mnt_options)</a>
+        <a href="#mnt_options%3D%28mnt_options%3AString%29-instance-method" class="signature"><strong>#mnt_options=</strong>(mnt_options : String)</a>
         
       </li>
     
@@ -295,7 +295,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#node%3D%28node%29-instance-method" class="signature"><strong>#node=</strong>(node)</a>
+        <a href="#node%3D%28node%3AGlusterCLI%3A%3ANodeInfo%29-instance-method" class="signature"><strong>#node=</strong>(node : GlusterCLI::NodeInfo)</a>
         
       </li>
     
@@ -305,7 +305,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#path%3D%28path%29-instance-method" class="signature"><strong>#path=</strong>(path)</a>
+        <a href="#path%3D%28path%3AString%29-instance-method" class="signature"><strong>#path=</strong>(path : String)</a>
         
       </li>
     
@@ -315,7 +315,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#pid%3D%28pid%29-instance-method" class="signature"><strong>#pid=</strong>(pid)</a>
+        <a href="#pid%3D%28pid%3AInt32%29-instance-method" class="signature"><strong>#pid=</strong>(pid : Int32)</a>
         
       </li>
     
@@ -355,7 +355,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#state%3D%28state%29-instance-method" class="signature"><strong>#state=</strong>(state)</a>
+        <a href="#state%3D%28state%3AString%29-instance-method" class="signature"><strong>#state=</strong>(state : String)</a>
         
       </li>
     
@@ -365,7 +365,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#type%3D%28type%29-instance-method" class="signature"><strong>#type=</strong>(type)</a>
+        <a href="#type%3D%28type%3AString%29-instance-method" class="signature"><strong>#type=</strong>(type : String)</a>
         
       </li>
     
@@ -440,7 +440,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L42" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -456,7 +456,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L60" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L60" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -486,23 +486,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="block_size=(block_size)-instance-method">
+    <div class="entry-detail" id="block_size=(block_size:Int32)-instance-method">
       <div class="signature">
         
-        def <strong>block_size=</strong>(block_size)
+        def <strong>block_size=</strong>(block_size : Int32)
 
-        <a class="method-permalink" href="#block_size%3D%28block_size%29-instance-method">#</a>
+        <a class="method-permalink" href="#block_size%3D%28block_size%3AInt32%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -518,23 +518,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="device=(device)-instance-method">
+    <div class="entry-detail" id="device=(device:String)-instance-method">
       <div class="signature">
         
-        def <strong>device=</strong>(device)
+        def <strong>device=</strong>(device : String)
 
-        <a class="method-permalink" href="#device%3D%28device%29-instance-method">#</a>
+        <a class="method-permalink" href="#device%3D%28device%3AString%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -550,23 +550,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="fs_name=(fs_name)-instance-method">
+    <div class="entry-detail" id="fs_name=(fs_name:String)-instance-method">
       <div class="signature">
         
-        def <strong>fs_name=</strong>(fs_name)
+        def <strong>fs_name=</strong>(fs_name : String)
 
-        <a class="method-permalink" href="#fs_name%3D%28fs_name%29-instance-method">#</a>
+        <a class="method-permalink" href="#fs_name%3D%28fs_name%3AString%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -582,7 +582,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -598,7 +598,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -614,7 +614,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -630,7 +630,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -646,7 +646,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -662,7 +662,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -678,23 +678,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="mnt_options=(mnt_options)-instance-method">
+    <div class="entry-detail" id="mnt_options=(mnt_options:String)-instance-method">
       <div class="signature">
         
-        def <strong>mnt_options=</strong>(mnt_options)
+        def <strong>mnt_options=</strong>(mnt_options : String)
 
-        <a class="method-permalink" href="#mnt_options%3D%28mnt_options%29-instance-method">#</a>
+        <a class="method-permalink" href="#mnt_options%3D%28mnt_options%3AString%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -710,23 +710,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="node=(node)-instance-method">
+    <div class="entry-detail" id="node=(node:GlusterCLI::NodeInfo)-instance-method">
       <div class="signature">
         
-        def <strong>node=</strong>(node)
+        def <strong>node=</strong>(node : <a href="../GlusterCLI/NodeInfo.html">GlusterCLI::NodeInfo</a>)
 
-        <a class="method-permalink" href="#node%3D%28node%29-instance-method">#</a>
+        <a class="method-permalink" href="#node%3D%28node%3AGlusterCLI%3A%3ANodeInfo%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -742,23 +742,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="path=(path)-instance-method">
+    <div class="entry-detail" id="path=(path:String)-instance-method">
       <div class="signature">
         
-        def <strong>path=</strong>(path)
+        def <strong>path=</strong>(path : String)
 
-        <a class="method-permalink" href="#path%3D%28path%29-instance-method">#</a>
+        <a class="method-permalink" href="#path%3D%28path%3AString%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -774,23 +774,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="pid=(pid)-instance-method">
+    <div class="entry-detail" id="pid=(pid:Int32)-instance-method">
       <div class="signature">
         
-        def <strong>pid=</strong>(pid)
+        def <strong>pid=</strong>(pid : Int32)
 
-        <a class="method-permalink" href="#pid%3D%28pid%29-instance-method">#</a>
+        <a class="method-permalink" href="#pid%3D%28pid%3AInt32%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -806,7 +806,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -822,7 +822,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -838,7 +838,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -854,7 +854,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -870,7 +870,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -886,7 +886,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -902,23 +902,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="state=(state)-instance-method">
+    <div class="entry-detail" id="state=(state:String)-instance-method">
       <div class="signature">
         
-        def <strong>state=</strong>(state)
+        def <strong>state=</strong>(state : String)
 
-        <a class="method-permalink" href="#state%3D%28state%29-instance-method">#</a>
+        <a class="method-permalink" href="#state%3D%28state%3AString%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -934,23 +934,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="type=(type)-instance-method">
+    <div class="entry-detail" id="type=(type:String)-instance-method">
       <div class="signature">
         
-        def <strong>type=</strong>(type)
+        def <strong>type=</strong>(type : String)
 
-        <a class="method-permalink" href="#type%3D%28type%29-instance-method">#</a>
+        <a class="method-permalink" href="#type%3D%28type%3AString%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/4350f1cf558c7c4d27722addf11369a2ccae5f87/src/types.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/aravindavk/glustercli-crystal/blob/0881f270471be31d4f6d06f45d896e17adace0db/src/types.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>

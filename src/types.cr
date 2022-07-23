@@ -121,7 +121,13 @@ module GlusterCLI
     end
 
     def subvol_size
-      @bricks.size / @distribute_count
+      if @replica_count > 1
+        @replica_count
+      elsif @disperse_count > 0
+        @disperse_count
+      else
+        1
+      end
     end
   end
 end

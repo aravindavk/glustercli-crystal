@@ -59,8 +59,6 @@ module GlusterCLI
             volume.snapshot_count = ele.content.strip.to_i
           when "brickCount"
             volume.brick_count = ele.content.strip.to_i
-          when "distCount"
-            volume.distribute_count = ele.content.strip.to_i
           when "replicaCount"
             volume.replica_count = ele.content.strip.to_i
           when "arbiterCount"
@@ -73,6 +71,7 @@ module GlusterCLI
             nil
           end
         end
+        volume.distribute_count = (volume.brick_count / volume.subvol_size).to_i
 
         brks = vol.xpath_nodes(".//brick")
         brks.each do |brk|

@@ -1,8 +1,8 @@
 name: lint
-version: 0.1.0
+version: 0.2.0
 
 authors:
-  - Kadalu.io <engineering@kadalu.io>
+  - Aravinda Vishwanathapura <mail@aravindavk.in>
 
 description: |
   To install Lint tool Ameba
@@ -12,3 +12,4 @@ license: GPLv3
 development_dependencies:
   ameba:
     github: crystal-ameba/ameba
+    version: ~> 1.0.0

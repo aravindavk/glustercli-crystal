@@ -14,7 +14,7 @@ module GlusterCLI
     # :nodoc:
     def execute_gluster_cmd(args)
       rc, resp, err = GlusterCLI.execute_cmd(@gluster_executable, args)
-      err_resp = parse_error(resp)
+      err_resp = GlusterCLI.parse_error(resp)
       unless err_resp.ok?
         raise CommandException.new(err_resp.ret, err_resp.message, err_resp.errno)
       end

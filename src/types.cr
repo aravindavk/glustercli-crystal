@@ -23,16 +23,18 @@ module GlusterCLI
     property replica_count = 1,
       disperse_count = 0,
       disperse_redundancy_count = 0,
-      volume_type = "Distribute",
-      force = false
+      volume_type = "Distribute"
+
+    property? force = false
   end
 
   struct NodeInfo
     include JSON::Serializable
 
     property id = "",
-      hostname = "",
-      connected = false
+      hostname = ""
+
+    property? connected = false
 
     def initialize
     end

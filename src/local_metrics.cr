@@ -119,16 +119,16 @@ module GlusterCLI
       # TODO: Handle custom log directory
       local_metrics.log_dir_size_bytes = dir_size(log_dir)
 
-      procs.each do |p|
-        if p.command == PROCESS_GLUSTERFSD
-          local_metrics.bricks.merge!(brick_metrics(p))
-        elsif p.command == PROCESS_GLUSTERD
-          local_metrics.glusterd = glusterd_metrics(p)
-        elsif p.command == PROCESS_EXPORTER
-          local_metrics.exporter = exporter_metrics(p)
-        elsif p.command == PROCESS_GLUSTERFS
-          if shd_process?(p)
-            local_metrics.shds << shd_metrics(p)
+      procs.each do |prc|
+        if prc.command == PROCESS_GLUSTERFSD
+          local_metrics.bricks.merge!(brick_metrics(prc))
+        elsif prc.command == PROCESS_GLUSTERD
+          local_metrics.glusterd = glusterd_metrics(prc)
+        elsif prc.command == PROCESS_EXPORTER
+          local_metrics.exporter = exporter_metrics(prc)
+        elsif prc.command == PROCESS_GLUSTERFS
+          if shd_process?(prc)
+            local_metrics.shds << shd_metrics(prc)
           end
         end
       end

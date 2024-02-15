@@ -14,9 +14,14 @@ module GlusterCLI
   TYPE_DISPERSE  = "Disperse"
 
   class CommandException < Exception
-    def initialize(@ret : Int32, @error : String)
-      super("[#{ret}] #{error}")
+    def initialize(@ret : Int32, @error : String, @errno = 0)
+      super("[#{@ret}] #{@errno} #{@error}")
     end
+  end
+
+  struct CliError
+    property ret = 0, errno = 0, message = ""
+    property? ok = true
   end
 
   struct VolumeCreateOptions

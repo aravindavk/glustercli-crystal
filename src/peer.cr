@@ -6,15 +6,12 @@ require "./types"
 module GlusterCLI
   class Peer
     # :nodoc:
-    def initialize(@cli, @hostname)
+    def initialize(@cli : CLI, @hostname : String)
     end
 
     # :nodoc:
     def self.list(cli)
-      rc, resp, err = cli.execute_gluster_cmd(["pool", "list", "--xml"])
-      if rc != 0
-        raise CommandException.new(rc, err)
-      end
+      resp = cli.execute_gluster_cmd(["pool", "list", "--xml"])
 
       document = XML.parse(resp)
 
@@ -53,7 +50,7 @@ module GlusterCLI
     def get
       # TODO: Find a better solution than running Pool list
       # and returning one record
-      peers = list(@cli)
+      peers = Peer.list(@cli)
       peers.each do |peer|
         return peer if peer.hostname == @hostname
       end
@@ -63,10 +60,7 @@ module GlusterCLI
 
     # :nodoc:
     def self.add(cli, hostname)
-      rc, _resp, err = cli.execute_gluster_cmd(["pool", "probe", hostname, "--xml"])
-      if rc != 0
-        raise CommandException.new(rc, err)
-      end
+      cli.execute_gluster_cmd(["peer", "probe", hostname, "--xml"])
     end
 
     # Remove a Peer
@@ -76,10 +70,7 @@ module GlusterCLI
     # cli.peer("server1.example.com").remove
     # ```
     def remove
-      rc, _resp, err = @cli.execute_gluster_cmd(["pool", "detach", @hostname, "--xml"])
-      if rc != 0
-        raise CommandException.new(rc, err)
-      end
+      @cli.execute_gluster_cmd(["peer", "detach", @hostname, "--xml"])
     end
   end
 end

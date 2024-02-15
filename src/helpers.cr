@@ -13,7 +13,40 @@ module GlusterCLI
   class CLI
     # :nodoc:
     def execute_gluster_cmd(args)
-      GlusterCLI.execute_cmd(@gluster_executable, args)
+      rc, resp, err = GlusterCLI.execute_cmd(@gluster_executable, args)
+      err_resp = parse_error(resp)
+      unless err_resp.ok?
+        raise CommandException.new(err_resp.ret, err_resp.message, err_resp.errno)
+      end
+
+      if rc != 0
+        raise CommandException.new(rc, err)
+      end
+
+      resp
     end
+  end
+
+  def self.parse_error(data)
+    err = CliError.new
+    document = XML.parse(data)
+    errdoc = document.first_element_child
+
+    return err if errdoc.nil?
+
+    errdoc.children.each do |ele|
+      case ele.name
+      when "opRet"
+        err.ret = ele.content.strip.to_i
+      when "opErrno"
+        err.errno = ele.content.strip.to_i
+      when "opErrstr"
+        err.message = ele.content.strip
+      end
+    end
+
+    err.ok = false if err.message != ""
+
+    err
   end
 end

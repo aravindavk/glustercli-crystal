@@ -20,7 +20,8 @@ module GlusterCLI
       end
 
       if rc != 0
-        raise CommandException.new(rc, err)
+        msg = err.strip == "" ? resp.strip : err.strip
+        raise CommandException.new(rc, msg)
       end
 
       resp

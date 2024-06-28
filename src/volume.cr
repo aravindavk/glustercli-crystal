@@ -13,7 +13,7 @@ module GlusterCLI
 
         # Divide the bricks list as subvolumes
         subvol_bricks = [] of Array(Brick)
-        volume.bricks.each_slice(volume.subvol_size.to_i) do |grp|
+        volume.bricks.each_slice(volume.subvol_size.to_u64) do |grp|
           subvol_bricks << grp
         end
 
@@ -85,7 +85,7 @@ module GlusterCLI
             when "hostUuid"
               brick.node.id = bele.content.strip
             when "isArbiter"
-              brick.type = bele.content.strip == '1' ? "Arbiter" : "Brick"
+              brick.type = bele.content.strip == "1" ? "Arbiter" : "Brick"
             end
           end
           volume.bricks << brick
